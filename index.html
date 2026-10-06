@@ -172,15 +172,16 @@ td.k{font-weight:700;color:var(--head)}
 .wk .wip{background:linear-gradient(90deg,var(--champ),var(--gold-l));border-color:transparent}
 .wkl{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;font-size:12.5px;color:var(--muted);margin-bottom:28px;line-height:1.25}
 .week{list-style:none;padding:0;margin:0 0 20px;max-width:none;display:grid;gap:12px}
-.week li{display:grid;grid-template-columns:58px 1fr auto;gap:18px;padding:20px 22px;border:1px solid var(--line2);border-radius:16px;background:var(--glass);margin:0;transition:transform .25s ease,box-shadow .25s ease}
-.week li:hover{transform:translateY(-2px);box-shadow:var(--shadow-s)}
+.week>li{display:grid;grid-template-columns:58px 1fr auto;gap:18px;padding:20px 22px;border:1px solid var(--line2);border-radius:16px;background:var(--glass);margin:0;transition:transform .25s ease,box-shadow .25s ease}
+.week>li:hover{transform:translateY(-2px);box-shadow:var(--shadow-s)}
 .week .d{font-size:34px;font-weight:800;line-height:1;background:var(--gtext);-webkit-background-clip:text;background-clip:text;color:transparent}
 .week .d small{display:block;font-size:12.5px;color:var(--muted);-webkit-text-fill-color:var(--muted);font-weight:600;margin-top:6px}
 .week h3{margin:0 0 6px}
 .week p{margin:0 0 6px;font-size:15.5px}
-.week ul{margin:6px 0 4px;font-size:15px}
+.week ul{margin:6px 0 4px;font-size:15px;padding-left:20px}
+.week ul li{display:list-item;margin:0 0 4px;padding:0;border:0;background:none}
 .week .who{font-size:13.5px;color:var(--gold-d);font-weight:600;margin-top:6px}
-.week li>.st{align-self:start}
+.week>li>.st{align-self:start}
 
 /* timeline */
 .tl{list-style:none;padding:0;margin:10px 0 26px;max-width:none;position:relative}
@@ -353,7 +354,7 @@ td.k{font-weight:700;color:var(--head)}
 @media (max-width:620px){
   body{font-size:16.5px}
   .gal{grid-template-columns:1fr}
-  .week li{grid-template-columns:46px 1fr;padding:16px}.week li>.st{grid-column:2;justify-self:start}
+  .week>li{grid-template-columns:46px 1fr;padding:16px}.week>li>.st{grid-column:2;justify-self:start}
   .lead{font-size:19px}
   .bigscore{grid-template-columns:1fr}
   .pager{grid-template-columns:1fr}.pager .nx{grid-column:1}
@@ -401,7 +402,7 @@ td.k{font-weight:700;color:var(--head)}
   </div>
   <h2>Onde estamos</h2>
   <p>O projeto está na <strong>Fase 1, Start do Projeto</strong>, do Método 360°. O kickoff foi realizado, a documentação técnica e jurídica principal já foi recebida e o espelho de vendas está montado. A obra está finalizando as últimas lajes.</p>
-  <div class="wk" aria-hidden="true"><div class="ok"></div><div class="wip"></div><div class="wip"></div><div class="adv"></div><div class="wip"></div><div class="adv"></div><div></div></div>
+  <div class="wk" aria-hidden="true"><div class="ok"></div><div class="wip"></div><div class="ok"></div><div class="adv"></div><div class="wip"></div><div class="adv"></div><div></div></div>
   <div class="wkl"><span>Kickoff</span><span>Drive</span><span>Presskit</span><span>Produto</span><span>Jurídico</span><span>Briefings</span><span>Aprovação</span></div>
   <h2>Os dois objetivos do trabalho</h2>
   <div class="two">
@@ -425,7 +426,7 @@ td.k{font-weight:700;color:var(--head)}
   <header class="ph"><p class="chap">O projeto</p><h1>Método 360° e cronograma</h1><div class="rule"></div></header>
   <p class="lead">O Método 360° da GO Company organiza o projeto em etapas que vão do entendimento da empresa até a venda. A venda começa onde termina: cada etapa prepara a seguinte.</p>
   <ol class="road">
-    <li><div class="dot now">1</div><div><h3>Start do Projeto <span class="st wip">Em andamento</span></h3><p>Kickoff, Drive da conta, presskit e canal oficial, material do produto, checklist jurídico, briefings e aprovação.</p></div></li>
+    <li><div class="dot now">1</div><div><h3>Start do Projeto <span class="st wip">Em andamento</span></h3><p>Kickoff, Drive da conta, presskit e onboarding, material do produto, checklist jurídico, briefings e aprovação.</p></div></li>
     <li><div class="dot">2</div><div><h3>Diagnóstico <span class="st fut">A iniciar</span></h3><p>Pesquisa de mercado em Santa Maria, benchmark, análise da comunicação atual e levantamento de concorrentes, incluindo os m² construídos por cada um.</p></div></li>
     <li><div class="dot">3</div><div><h3>Imersão <span class="st fut">A iniciar</span></h3><p>Entrevistas com Pedro, Josemar e Douglas, cultura, essência e origem da marca.</p></div></li>
     <li><div class="dot">4</div><div><h3>Estratégia <span class="st fut">A iniciar</span></h3><p>Posicionamento, proposta de valor, território e personalidade da marca. Precificação definitiva e condições de pagamento do Maestro.</p></div></li>
@@ -440,12 +441,12 @@ td.k{font-weight:700;color:var(--head)}
   <header class="ph"><p class="chap">O projeto</p><h1>Semana 1 · Start do Projeto</h1><div class="rule"></div></header>
   <p class="lead">1 etapa concluída, 2 avançadas, 3 em andamento e 1 a iniciar.</p>
   <ol class="week">
-    <li><div class="d">1<small>Dia</small></div><div><h3>Reunião de kickoff</h3><p>Reunião realizada e roteiro analisado. Boa parte das perguntas já foi respondida depois, por documentos e pelo alinhamento com a GO.</p><ul><li>Falta: conversa complementar sobre objetivos, expectativas e percepção de marca.</li></ul><div class="who">GO: Gustavo e Cássio · Schio: Douglas</div></div><span class="st ok">Concluído</span></li>
-    <li><div class="d">2<small>Dia</small></div><div><h3>Drive da conta</h3><p>Pasta criada com o roteiro de kickoff, o resumo do kickoff e o diagnóstico digital.</p><ul><li>Falta: estrutura padrão do projeto, arquivamento dos documentos e organização das imagens recebidas.</li><li>Falta: pasta de documentação jurídica para clientes e parceiros.</li></ul><div class="who">GO: Angela</div></div><span class="st wip">Em andamento</span></li>
-    <li><div class="d">3<small>Dia</small></div><div><h3>Presskit e canal oficial</h3><p>Canal oficial definido: grupo de WhatsApp entre GO e Schio, e grupos com corretores e parceiros. Aprovação de peças no grupo, em até 24 horas.</p><ul><li>Falta: guia de boas-vindas (presskit).</li></ul><div class="who">GO: Wellen, Fernanda e Gustavo</div></div><span class="st wip">Em andamento</span></li>
-    <li><div class="d">4<small>Dia</small></div><div><h3>Material completo do produto</h3><p>Matrícula, licença, memorial, plantas, cortes, quadros de áreas, prévia visual e tabela de valores provisória recebidos. Espelho de vendas montado.</p><ul><li>Falta: memorial de acabamentos, plantas em DWG, originais em alta resolução e perfil dos compradores atuais.</li></ul><div class="who">GO: Cássio e Arthur Vargas · Schio: Douglas e Cristian</div></div><span class="st req">Avançado</span></li>
+    <li><div class="d">1<small>Dia</small></div><div><h3>Reunião de kickoff</h3><p>Reunião realizada e roteiro analisado. Boa parte das perguntas já foi respondida depois, por documentos e pelo alinhamento com a GO.</p><ul><li>Falta: conversa complementar sobre objetivos, expectativas e percepção de marca.</li></ul><div class="who">GO: todo o time · Schio: Douglas</div></div><span class="st ok">Concluído</span></li>
+    <li><div class="d">2<small>Dia</small></div><div><h3>Drive da conta</h3><p>Pasta criada com o roteiro de kickoff, o resumo do kickoff e o diagnóstico digital.</p><ul><li>Falta: estrutura padrão do projeto, arquivamento dos documentos e organização das imagens recebidas.</li><li>Falta: pasta de documentação jurídica para clientes e parceiros.</li></ul><div class="who">GO: Fernanda</div></div><span class="st wip">Em andamento</span></li>
+    <li><div class="d">3<small>Dia</small></div><div><h3>Presskit e onboarding</h3><p>Presskit: presente personalizado da GO para a Schio, entregue na assinatura do contrato. Onboarding: na reunião de kickoff, apresentamos as pessoas responsáveis pelo atendimento, suas funções e contatos. A comunicação do dia a dia segue no grupo de WhatsApp entre GO e Schio e nos grupos com corretores e parceiros, com aprovação de peças em até 24 horas.</p><div class="who">GO: Wellen e Gustavo</div></div><span class="st ok">Concluído</span></li>
+    <li><div class="d">4<small>Dia</small></div><div><h3>Material completo do produto</h3><p>Matrícula, licença, memorial, plantas, cortes, quadros de áreas, prévia visual e tabela de valores provisória recebidos. Espelho de vendas montado.</p><ul><li>Falta: memorial de acabamentos, plantas em DWG, originais em alta resolução e perfil dos compradores atuais.</li></ul><div class="who">GO: Wellen e Gustavo · Schio: Douglas e Cristian</div></div><span class="st req">Avançado</span></li>
     <li><div class="d">5<small>Dia</small></div><div><h3>Checklist jurídico preliminar</h3><p>Matrícula analisada: incorporação registrada e sem ônus. Licença válida até 26/05/2028.</p><ul><li>Falta: certidões, documentos societários, aprovações complementares, modelos de contrato e definição sobre patrimônio de afetação.</li></ul><div class="who">GO: Junior e Angela · Schio: Stefani</div></div><span class="st wip">Em andamento</span></li>
-    <li><div class="d">6<small>Dia</small></div><div><h3>Briefings detalhados</h3><p>As informações da empresa e do projeto estão consolidadas neste Master Plan.</p><ul><li>Falta: completar com a conversa complementar.</li></ul><div class="who">GO: Cássio e Wellen</div></div><span class="st req">Avançado</span></li>
+    <li><div class="d">6<small>Dia</small></div><div><h3>Briefings detalhados</h3><p>As informações da empresa e do projeto estão consolidadas neste Master Plan.</p><ul><li>Falta: completar com a conversa complementar.</li></ul><div class="who">GO: Wellen</div></div><span class="st req">Avançado</span></li>
     <li><div class="d">7<small>Dia</small></div><div><h3>Consolidação e aprovação</h3><p>Revisão final do conteúdo da Fase 1 e aceite da Schio.</p><div class="who">GO: Gustavo e Cássio · Schio: Douglas</div></div><span class="st todo">A iniciar</span></li>
   </ol>
 </article>
@@ -605,7 +606,7 @@ td.k{font-weight:700;color:var(--head)}
     <li><b>2025: Residencial Maestro</b><span>Licença emitida em 26/05/2025 e incorporação registrada em 30/10/2025. É o primeiro passo da Schio rumo a uma esteira própria em Santa Maria.</span></li>
   </ul>
   <h2>Obras em destaque no portfólio</h2>
-  <p>Resort Termas Romanas (novas piscinas, Templo de Bem-Estar), Residencial Recanto Maestro, Fábrica de Azeite Recanto Maestro, Galpão do Agro, Di Paolo e Casa do Recanto, e o projeto citado como destaque no kickoff: Hermes Gazzolla / Residencial Olivas, a confirmar. Há também entregas em "SCS", a confirmar.</p>
+  <p>Resort Termas Romanas (novas piscinas, Templo de Bem-Estar), Residencial Recanto Maestro, Fábrica de Azeite Recanto Maestro, Galpão do Agro, Di Paolo e Casa do Recanto, e o projeto citado como destaque no kickoff: Residencial do Hermes Gazolla. Há também entregas em Santa Cruz do Sul.</p>
   <div class="note"><p><strong>Para o novo portfólio:</strong> vamos reunir fotos, áreas, prazos e números de cada obra entregue. Hoje esses números não aparecem em nenhum material da Schio.</p></div>
 </article>
 
@@ -633,11 +634,11 @@ td.k{font-weight:700;color:var(--head)}
     <tbody>
       <tr><td colspan="3" style="background:var(--gold-soft);font-weight:700;color:var(--gold-d);font-size:13px">Diretoria</td></tr>
       <tr><td class="k">Gustavo</td><td>CEO e sócio-fundador · CRECI</td><td>Direção do projeto e relacionamento com a Schio</td></tr>
-      <tr><td class="k">Angela</td><td>Sócia e diretora administrativo-financeira</td><td>Administrativo, Drive da conta e gestão documental</td></tr>
+      <tr><td class="k">Angela</td><td>Sócia e diretora administrativo-financeira</td><td>Administrativo e gestão documental</td></tr>
       <tr><td colspan="3" style="background:var(--gold-soft);font-weight:700;color:var(--gold-d);font-size:13px">Marketing</td></tr>
       <tr><td class="k">Wellen</td><td>Diretora de marketing</td><td>Posicionamento, identidade do Maestro e materiais</td></tr>
       <tr><td class="k">Ricardo</td><td>Especialista em performance e mídia paga</td><td>Rastreamento, públicos e campanhas de geração de leads</td></tr>
-      <tr><td class="k">Fernanda</td><td>Produtora audiovisual</td><td>Produção audiovisual do projeto e das campanhas</td></tr>
+      <tr><td class="k">Fernanda</td><td>Produtora audiovisual</td><td>Drive da conta e produção audiovisual do projeto e das campanhas</td></tr>
       <tr><td class="k">André</td><td>Analista de social media</td><td>Instagram e conteúdo</td></tr>
       <tr><td colspan="3" style="background:var(--gold-soft);font-weight:700;color:var(--gold-d);font-size:13px">Comercial</td></tr>
       <tr><td class="k">Marcio</td><td>Diretor comercial · CRECI</td><td>Direção comercial da GO</td></tr>
@@ -656,7 +657,7 @@ td.k{font-weight:700;color:var(--head)}
   <div class="scroll"><table>
     <thead><tr><th>Parceiro</th><th>Papel</th></tr></thead>
     <tbody>
-            <tr><td class="k">Santa Imóveis (Wagner Hubert)</td><td>Atendimento dos leads gerados para o projeto, em Santa Maria</td></tr>
+            <tr><td class="k">Santa Imóveis (Vagner Uberti)</td><td>Atendimento dos leads gerados para o projeto, em Santa Maria</td></tr>
       <tr><td class="k">Canais parceiros da GO</td><td>Imobiliárias e corretores que trazem clientes ao projeto</td></tr>
       <tr><td class="k">Arq. Renato Machado Flores</td><td>Autor do projeto arquitetônico</td></tr>
       <tr><td class="k">SLAM Produções e Tag Comunicação</td><td>Criação e gestão do site atual da Schio</td></tr>
@@ -846,7 +847,7 @@ td.k{font-weight:700;color:var(--head)}
     <thead><tr><th>Frente</th><th>Como funciona</th></tr></thead>
     <tbody>
       <tr><td class="k">Gestão comercial</td><td>GO Company, junto aos parceiros e imobiliárias</td></tr>
-      <tr><td class="k">Atendimento dos leads</td><td>Santa Imóveis (Santa Maria), com Wagner Hubert. Os leads gerados são distribuídos para atendimento</td></tr>
+      <tr><td class="k">Atendimento dos leads</td><td>Santa Imóveis (Santa Maria), com Vagner Uberti. Os leads gerados são distribuídos para atendimento</td></tr>
       <tr><td class="k">Canais parceiros</td><td>Parceiros da GO que trazem clientes para o projeto. O mapeamento completo é etapa futura</td></tr>
       <tr><td class="k">Marketing digital</td><td>Campanhas e geração de leads, estruturadas após o posicionamento</td></tr>
       <tr><td class="k">Central de vendas</td><td>Nos escritórios das empresas que atendem o projeto. A sede da Schio fica no Recanto Maestro</td></tr>
@@ -1110,6 +1111,11 @@ td.k{font-weight:700;color:var(--head)}
   <div class="scroll"><table>
     <thead><tr><th>Data</th><th>Atualização</th></tr></thead>
     <tbody>
+      <tr><td class="num k">06/10/2026</td><td>Correção do layout dos itens "Falta" na página da Semana 1</td></tr>
+      <tr><td class="num k">06/10/2026</td><td>Pessoas e parceiros: nome do contato da Santa Imóveis corrigido para Vagner Uberti</td></tr>
+      <tr><td class="num k">06/10/2026</td><td>A Schio: obras entregues revisadas (Residencial do Hermes Gazolla, Residencial Olivas suprimido por ser a Fábrica de Azeite, entregas em Santa Cruz do Sul)</td></tr>
+      <tr><td class="num k">06/10/2026</td><td>Start do Projeto: responsáveis atualizados (kickoff com todo o time, Drive com a Fernanda, presskit e onboarding e material do produto com Wellen e Gustavo, briefings com a Wellen)</td></tr>
+      <tr><td class="num k">06/10/2026</td><td>Start do Projeto: "Presskit e canal oficial" passa a "Presskit e onboarding", etapa concluída</td></tr>
       <tr><td class="num k">06/10/2026</td><td>Visão geral: objetivo "Marca Schio" renomeado para "Posicionamento Schio"</td></tr>
       <tr><td class="num k">06/10/2026</td><td>Tarefas do Marcio transferidas para o Cássio</td></tr>
       <tr><td class="num k">06/10/2026</td><td>Tarefas da GO organizadas por pessoa, com percentual da Semana 1, link direto por pessoa e programação da Semana 2</td></tr>
@@ -1176,14 +1182,14 @@ td.k{font-weight:700;color:var(--head)}
    ['Reunião de kickoff com a Schio',['gustavo','cassio'],'ok'],
    ['Conversa complementar com o Douglas (objetivos, expectativas e marca)',['gustavo','cassio'],'todo'],
    ['Confirmar contrato e NDA assinados',['gustavo','angela'],'todo'],
-   ['Canal oficial: grupo de WhatsApp com a Schio',['gustavo'],'ok'],
+   ['Onboarding no kickoff: responsáveis, funções e contatos',['wellen','gustavo'],'ok'],
    ['Publicar o Master Plan do projeto',['gustavo'],'ok'],
    ['Aceite da Semana 1 pela Schio',['gustavo'],'todo'],
-   ['Estrutura do Drive interno do projeto',['angela'],'wip'],
-   ['Criar a pasta compartilhada com a Schio e enviar o link para o Master Plan',['angela'],'todo'],
-   ['Guia de boas-vindas (presskit)',['wellen','fernanda'],'todo'],
-   ['Briefing estratégico (rascunho)',['wellen','cassio'],'ok'],
-   ['Completar o briefing com a conversa complementar',['wellen','cassio'],'todo'],
+   ['Estrutura do Drive interno do projeto',['fernanda'],'wip'],
+   ['Criar a pasta compartilhada com a Schio e enviar o link para o Master Plan',['fernanda'],'todo'],
+   ['Presskit entregue na assinatura do contrato',['wellen','gustavo'],'ok'],
+   ['Briefing estratégico (rascunho)',['wellen'],'ok'],
+   ['Completar o briefing com a conversa complementar',['wellen'],'todo'],
    ['Receber a tabela e montar o espelho de vendas',['arthur','cassio'],'ok'],
    ['Cobrar as pendências da Schio: compradores, lista de clientes, data de entrega, DWG, originais e memorial de acabamentos',['cassio'],'wip'],
    ['Cadastrar tabela e unidades no sistema',['arthur'],'todo'],
@@ -1194,7 +1200,7 @@ td.k{font-weight:700;color:var(--head)}
   ];
   var W2=[
    ['Entrevistas de imersão com Pedro, Josemar e Douglas',['gustavo']],
-   ['Organizar o Drive compartilhado por fase',['angela']],
+   ['Organizar o Drive compartilhado por fase',['fernanda']],
    ['Estudo de concorrência e posicionamento',['wellen','cassio']],
    ['Briefing da identidade do Residencial Maestro',['wellen']],
    ['Instalar Pixel da Meta, GA4 e Tag Manager no site',['ricardo']],
