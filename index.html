@@ -120,6 +120,8 @@ thead+tbody tr:first-child td{border-top:0}
 tbody tr{transition:background .2s ease}
 tbody tr:hover td{background:rgba(166,136,104,.06)}
 td.k{font-weight:700;color:var(--head)}
+td.k a{color:inherit;text-decoration:none;border-bottom:1px solid var(--gold-l)}
+td.k a:hover{color:var(--gold-d)}
 .num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .note,.prov{position:relative;background:linear-gradient(120deg,rgba(166,136,104,.16),rgba(166,136,104,.05) 70%,transparent);border:1px solid rgba(166,136,104,.3);padding:18px 22px 18px 24px;margin:18px 0 26px;border-radius:14px;max-width:48em}
 .note::before,.prov::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:3px;border-radius:3px;background:linear-gradient(180deg,var(--gold-l),var(--gold-d))}
@@ -340,6 +342,26 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
 .lkt small{display:block;color:var(--muted);font-size:13.5px;line-height:1.35;overflow-wrap:anywhere}
 @media (max-width:760px){.lkgrid{grid-template-columns:1fr}}
 
+
+.cbars{display:grid;gap:8px;margin:10px 0 18px}
+.cbar{display:grid;grid-template-columns:minmax(150px,280px) 1fr auto;gap:12px;align-items:center;font-size:14.5px}
+.cbar .cn{color:var(--ink)}
+.cbar.ref .cn,.cbar.ref .cv{font-weight:800;color:var(--head)}
+.cbar .ct{height:12px;background:var(--surface);border-radius:99px;overflow:hidden}
+.cbar .ct i{display:block;height:100%;border-radius:99px;transform-origin:left;animation:grow 1s cubic-bezier(.2,.7,.2,1) both .2s}
+.cbar .cv{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--muted);font-size:13.5px}
+@media (max-width:620px){.cbar{grid-template-columns:1fr auto}.cbar .ct{grid-column:1/-1;grid-row:2}}
+
+
+.srch input[type=search]{width:100%;font:inherit;font-size:16px;padding:13px 16px;border:1px solid var(--line2);border-radius:12px;background:var(--paper);color:var(--ink);margin:12px 0 10px}
+.srch input[type=search]:focus{outline:2px solid var(--gold);outline-offset:1px}
+.srch-opts{display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-size:14.5px;color:var(--muted);margin-bottom:10px}
+.srch-opts label{display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+.srch-opts span{margin-left:auto;font-weight:600;color:var(--head)}
+.srch mark{background:rgba(166,136,104,.3);color:inherit;border-radius:3px;padding:0 1px}
+.srch .more{font:inherit;font-weight:700;font-size:14.5px;margin:4px 0 0;padding:9px 18px;border-radius:99px;border:1px solid var(--line2);background:var(--paper);color:var(--head);cursor:pointer}
+.srch .go{display:inline-block;font-size:12px;font-weight:700;padding:2px 8px;border-radius:99px;background:var(--gold-soft,rgba(166,136,104,.18));color:var(--gold-d)}
+
 /* mobile */
 .scrim{display:none}
 @media (max-width:1060px){
@@ -410,10 +432,12 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
     <div><b>21</b><span>apartamentos em 7 pavimentos</span></div>
     <div><b>16</b><span>unidades disponíveis</span></div>
     <div><b>~190 m²</b><span>de lazer mobiliado no 9º pavimento</span></div>
-    <div><b>dez/2027</b><span>previsão de entrega, a confirmar</span></div>
+    <div><b>18–24 meses</b><span>previsão de entrega, entre abril e outubro de 2028</span></div>
   </div>
+  <h2>Meta do projeto</h2>
+  <p>Vender <strong>10 unidades entre o 2º e o 6º mês</strong>, uma média de 2 por mês. O 1º mês é dedicado à estruturação do projeto, que estava comercialmente parado.</p>
   <h2>Onde estamos</h2>
-  <p>O projeto está na <strong>Fase 1, Start do Projeto</strong>, do Método 360°. O kickoff foi realizado, a documentação técnica e jurídica principal já foi recebida e o espelho de vendas está montado. A obra está finalizando as últimas lajes.</p>
+  <p>O projeto está na <strong>Semana 2, Diagnóstico</strong>, do Método 360°. A Semana 1 entregou o kickoff, o contrato, o Drive, o briefing completo e o espelho de vendas. Agora a equipe levanta o mercado, o público e a concorrência em Santa Maria, e a semana fecha com a estratégia apresentada à Schio.</p>
   <div class="wk" aria-hidden="true"><div class="ok"></div><div class="wip"></div><div class="ok"></div><div class="adv"></div><div class="wip"></div><div class="adv"></div><div></div></div>
   <div class="wkl"><span>Kickoff</span><span>Drive</span><span>Presskit</span><span>Produto</span><span>Jurídico</span><span>Briefings</span><span>Aprovação</span></div>
   <h2>Os dois objetivos do trabalho</h2>
@@ -427,9 +451,9 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
     <li><strong>Briefing:</strong> briefing estratégico, diagnóstico, análise SWOT e pontos a trabalhar.</li>
     <li><strong>A Schio:</strong> história, pessoas e a marca hoje.</li>
     <li><strong>Residencial Maestro:</strong> ficha técnica, plantas, áreas comuns e documentação.</li>
-    <li><strong>Comercial:</strong> espelho de vendas, modelo comercial e público.</li>
+    <li><strong>Comercial:</strong> espelho de vendas, modelo comercial, estudo de concorrência, avaliação de mercado, parceiros comerciais e público macro.</li>
     <li><strong>Comunicação:</strong> material visual atual, como vão ficar os novos materiais e presença digital.</li>
-    <li><strong>Gestão:</strong> pendências, tarefas, links do projeto e histórico de atualizações.</li>
+    <li><strong>Gestão:</strong> pendências, tarefas e links do projeto.</li>
   </ul>
 </article>
 
@@ -438,8 +462,8 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
   <header class="ph"><p class="chap">O projeto</p><h1>Método 360° e cronograma</h1><div class="rule"></div></header>
   <p class="lead">O Método 360° da GO Company organiza o projeto em etapas que vão do entendimento da empresa até a venda. A venda começa onde termina: cada etapa prepara a seguinte.</p>
   <ol class="road">
-    <li><div class="dot now">1</div><div><h3>Start do Projeto <span class="st wip">Em andamento</span></h3><p>Kickoff, Drive da conta, presskit e onboarding, material do produto, checklist jurídico, briefings e aprovação.</p></div></li>
-    <li><div class="dot">2</div><div><h3>Diagnóstico <span class="st fut">A iniciar</span></h3><p>Pesquisa de mercado em Santa Maria, benchmark, análise da comunicação atual e levantamento de concorrentes, incluindo os m² construídos por cada um.</p></div></li>
+    <li><div class="dot done">1</div><div><h3>Start do Projeto <span class="st wip">Concluindo</span></h3><p>Kickoff, Drive da conta, presskit e onboarding, material do produto, checklist jurídico, briefings e consolidação.</p></div></li>
+    <li><div class="dot now">2</div><div><h3>Diagnóstico <span class="st wip">Em andamento · Semana 2</span></h3><p>Pesquisa de mercado em Santa Maria, benchmark, análise da comunicação atual e levantamento de concorrentes, incluindo os m² construídos por cada um.</p></div></li>
     <li><div class="dot">3</div><div><h3>Imersão <span class="st fut">A iniciar</span></h3><p>Entrevistas com Pedro, Josemar e Douglas, cultura, essência e origem da marca.</p></div></li>
     <li><div class="dot">4</div><div><h3>Estratégia <span class="st fut">A iniciar</span></h3><p>Posicionamento, proposta de valor, território e personalidade da marca. Precificação definitiva e condições de pagamento do Maestro.</p></div></li>
     <li><div class="dot">5</div><div><h3>Criação <span class="st fut">A iniciar</span></h3><p>Identidade do Residencial Maestro, book, portfólio, imagens de lançamento, peças e presença digital.</p></div></li>
@@ -501,16 +525,38 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
 <!-- ===================== SEMANA 1 -->
 <article class="page" data-id="semana1" data-ch="O projeto" data-t="Semana 1 · Start do Projeto">
   <header class="ph"><p class="chap">O projeto</p><h1>Semana 1 · Start do Projeto</h1><div class="rule"></div></header>
-  <p class="lead">2 etapas concluídas, 2 avançadas, 2 em andamento e 1 a iniciar.</p>
+  <p class="lead">4 etapas concluídas, 1 avançada e 2 em andamento.</p>
   <ol class="week">
-    <li><div class="d">1<small>Dia</small></div><div><h3>Reunião de kickoff</h3><p>Reunião realizada e roteiro analisado. Boa parte das perguntas já foi respondida depois, por documentos e pelo alinhamento com a GO.</p><ul><li>Falta: conversa complementar sobre objetivos, expectativas e percepção de marca.</li></ul><div class="who">GO: todo o time · Schio: Douglas</div></div><span class="st ok">Concluído</span></li>
-    <li><div class="d">2<small>Dia</small></div><div><h3>Drive da conta</h3><p>Pasta criada com o roteiro de kickoff, o resumo do kickoff e o diagnóstico digital.</p><ul><li>Falta: estrutura padrão do projeto, arquivamento dos documentos e organização das imagens recebidas.</li><li>Falta: pasta de documentação jurídica para clientes e parceiros.</li></ul><div class="who">GO: Fernanda</div></div><span class="st wip">Em andamento</span></li>
+    <li><div class="d">1<small>Dia</small></div><div><h3>Reunião de kickoff</h3><p>Reunião realizada e roteiro analisado. A conversa complementar definiu meta, visão de 5 anos, percepção de marca, porta-voz e nome oficial.</p><div class="who">GO: todo o time · Schio: Douglas</div></div><span class="st ok">Concluído</span></li>
+    <li><div class="d">2<small>Dia</small></div><div><h3>Drive da conta</h3><p>Pasta do projeto organizada em seis áreas (administrativo, materiais recebidos, comercial, marketing, eventos, fotos e vídeos) e compartilhada com a Schio como leitora. O link está na página Links do projeto.</p><div class="who">GO: Fernanda</div></div><span class="st ok">Concluído</span></li>
     <li><div class="d">3<small>Dia</small></div><div><h3>Presskit e onboarding</h3><p>Presskit: presente personalizado da GO para a Schio, entregue na assinatura do contrato. Onboarding: na reunião de kickoff, apresentamos as pessoas responsáveis pelo atendimento, suas funções e contatos. A comunicação do dia a dia segue no grupo de WhatsApp entre GO e Schio e nos grupos com corretores e parceiros, com aprovação de peças em até 24 horas.</p><div class="who">GO: Wellen e Gustavo</div></div><span class="st ok">Concluído</span></li>
-    <li><div class="d">4<small>Dia</small></div><div><h3>Material completo do produto</h3><p>Matrícula, licença, memorial, plantas, cortes, quadros de áreas, prévia visual e tabela de valores provisória recebidos. Espelho de vendas montado.</p><ul><li>Falta: memorial de acabamentos, plantas em DWG, originais em alta resolução e perfil dos compradores atuais.</li></ul><div class="who">GO: Wellen e Gustavo · Schio: Douglas e Cristian</div></div><span class="st req">Avançado</span></li>
-    <li><div class="d">5<small>Dia</small></div><div><h3>Checklist jurídico preliminar</h3><p>Matrícula analisada: incorporação registrada e sem ônus. Licença válida até 26/05/2028.</p><ul><li>Falta: certidões, documentos societários, aprovações complementares, modelos de contrato e definição sobre patrimônio de afetação.</li></ul><div class="who">GO: Junior e Angela · Schio: Stefani</div></div><span class="st wip">Em andamento</span></li>
-    <li><div class="d">6<small>Dia</small></div><div><h3>Briefings detalhados</h3><p>As informações da empresa e do projeto estão consolidadas neste Master Plan.</p><ul><li>Falta: completar com a conversa complementar.</li></ul><div class="who">GO: Wellen</div></div><span class="st req">Avançado</span></li>
-    <li><div class="d">7<small>Dia</small></div><div><h3>Consolidação e aprovação</h3><p>Revisão final do conteúdo da Fase 1 e aceite da Schio.</p><div class="who">GO: Gustavo e Cássio · Schio: Douglas</div></div><span class="st todo">A iniciar</span></li>
+    <li><div class="d">4<small>Dia</small></div><div><h3>Material completo do produto</h3><p>Matrícula, licença, memorial, plantas, cortes, quadros de áreas, prévia visual e tabela de valores provisória recebidos. Espelho de vendas montado.</p><ul><li>Falta: conferir o memorial de acabamentos; originais dos renders dos interiores com o arquiteto; perfil dos compradores com o Douglas; fotos da obra, pré-agendadas para 16/10.</li></ul><div class="who">GO: Wellen e Gustavo · Schio: Douglas e Cristian</div></div><span class="st req">Avançado</span></li>
+    <li><div class="d">5<small>Dia</small></div><div><h3>Checklist jurídico preliminar</h3><p>Matrícula analisada: incorporação registrada e sem ônus. Licença válida até 26/05/2028. Checklist de documentos conferido com o Drive.</p><ul><li>Falta: enviar ao Douglas o pedido único com os documentos a solicitar e arquivar os que já estão com a GO.</li></ul><div class="who">GO: Junior e Angela · Schio: Stefani</div></div><span class="st wip">Em andamento</span></li>
+    <li><div class="d">6<small>Dia</small></div><div><h3>Briefings detalhados</h3><p>Briefing completo neste Master Plan, com as respostas da conversa complementar: meta comercial, visão de 5 anos, percepção de marca e porta-voz.</p><div class="who">GO: Wellen</div></div><span class="st ok">Concluído</span></li>
+    <li><div class="d">7<small>Dia</small></div><div><h3>Consolidação</h3><p>Pedido único de documentos enviado à Schio. Não há aceite formal. A Semana 2 foi aberta em 14/10/2026, e os itens que ainda estão em aberto seguem em paralelo, com os mesmos responsáveis.</p><div class="who">GO: Gustavo e Cássio</div></div><span class="st wip">Em andamento</span></li>
   </ol>
+</article>
+
+<!-- ===================== SEMANA 2 -->
+<article class="page" data-id="semana2" data-ch="O projeto" data-t="Semana 2 · Diagnóstico">
+  <header class="ph"><p class="chap">O projeto</p><h1>Semana 2 · Diagnóstico</h1><div class="rule"></div></header>
+  <p class="lead">A Semana 2 levanta o mercado, o público e a concorrência em Santa Maria e fecha com a estratégia apresentada à Schio. Nesta fase de planejamento, cada entrega fica com um líder de área, que distribui a execução dentro da sua equipe.</p>
+  <ol class="week">
+    <li><div class="d">8<small>Dia</small></div><div><h3>Pesquisa de mercado e dados de Santa Maria</h3><p>Retrato da cidade e do bairro para posicionar o Maestro na realidade da praça.</p><ul><li>População, renda e crescimento (IBGE e prefeitura).</li><li>Plano diretor e vetores de crescimento da cidade.</li><li>Bairro Nossa Senhora das Dores: perfil, serviços e acessos.</li><li>Lançamentos recentes em Santa Maria.</li></ul><div class="who">Responsável: Luana</div></div><span class="st todo">Pendente</span></li>
+    <li><div class="d">9<small>Dia</small></div><div><h3>Análise socioeconômica e público-alvo</h3><p>Define para quem cada planta vai falar.</p><ul><li>Perfis do 104 m², do 83 m² e do 55 m².</li><li>Investidor e público universitário para o 55 m².</li><li>Perfil dos 5 compradores atuais, quando a Schio retornar.</li></ul><div class="who">Responsável: Wellen</div></div><span class="st todo">Pendente</span></li>
+    <li><div class="d">10<small>Dia</small></div><div><h3>Mapeamento da concorrência</h3><p>Mostra onde o Maestro se encaixa e a que preço.</p><ul><li>Lançamentos de 2 e 3 dormitórios em Santa Maria.</li><li>Preço por m², estoque e condições de pagamento.</li><li>M² construídos por construtora, para comparar com os ~300 mil m² da Schio.</li><li>Visitas aos plantões e coleta de materiais de venda.</li><li>Cadastro qualificado de imobiliárias e corretores, classificados em cinco grupos: lançamentos, médio e alto padrão, revenda e troca, primeiro imóvel e carteira patrimonial.</li></ul><div class="who">Mapa da concorrência e visitas: Cássio · imobiliárias e corretores: Luana</div></div><span class="st wip">Em andamento</span></li>
+    <li><div class="d">11<small>Dia</small></div><div><h3>Tendências e público</h3><p>Fecha o panorama antes das ferramentas estratégicas.</p><ul><li>Tendências de produto: lazer no topo, compactos para renda, vista.</li><li>Leitura digital: audiência para os anúncios, redes dos concorrentes e conversas sobre o bairro.</li></ul><div class="who">Responsável: Wellen</div></div><span class="st todo">Pendente</span></li>
+    <li><div class="d">12<small>Dia</small></div><div><h3>Ferramentas estratégicas</h3><p>Transforma os dados em direção de posicionamento e comunicação.</p><ul><li>SWOT, PESTEL e 5 Forças de Porter.</li><li>Matriz de Posicionamento.</li><li>12 personas compradoras, quatro por planta, com sensibilidade ao andar versus preço, e jornada do cliente.</li></ul><div class="who">Responsável: Gustavo</div></div><span class="st todo">Pendente</span></li>
+    <li><div class="d">13<small>Dia</small></div><div><h3>Dossiê de B.I. e Estratégia</h3><p>Reúne tudo num documento único, usado pelas outras áreas.</p><ul><li>Dossiê de B.I. com ficha técnica do empreendimento.</li><li>Diferenciais do Maestro frente aos concorrentes.</li><li>Faixa de preço de referência, que embasa a precificação da Semana 4.</li></ul><div class="who">Responsável: Cássio</div></div><span class="st wip">Em andamento</span></li>
+    <li><div class="d">14<small>Dia</small></div><div><h3>Apresentação da estratégia</h3><p>A Schio valida a estratégia antes de qualquer produção começar.</p><ul><li>Apresentação ao Douglas.</li><li>Validação no grupo de WhatsApp.</li></ul><div class="who">Responsável: Gustavo · Schio: Douglas</div></div><span class="st todo">Pendente</span></li>
+  </ol>
+  <h2>Em paralelo na Semana 2</h2>
+  <ul class="req-list">
+    <li><div>Entrevistas de imersão com Pedro, Josemar e Douglas<small>Gustavo</small></div><span class="st todo">Pendente</span></li>
+    <li><div>Frente digital imediata: Pixel da Meta, GA4 e Tag Manager no site, e plano de retomada do Instagram<small>Wellen · o Pixel depende do acesso às contas</small></div><span class="st todo">Pendente</span></li>
+    <li><div>Retorno do pedido de documentos e revisão dos contratos<small>Junior</small></div><span class="st todo">Pendente</span></li>
+  </ul>
+  <div class="note"><p>As tarefas de cada pessoa, incluindo o que segue da Semana 1, estão na página <a href="#tarefas">Tarefas da GO</a>.</p></div>
 </article>
 
 <!-- ===================== KICKOFF -->
@@ -539,26 +585,39 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
   <h2>Tarefas que saíram da reunião</h2>
   <ul class="req-list">
     <li><div>Levantar os m² construídos pelos concorrentes, para comparar com os ~300 mil m² da Schio<small>Dentro do Diagnóstico · GO</small></div><span class="st fut">Etapa futura</span></li>
-    <li><div>Autorização de voo de drone para imagens aéreas<small>Cristian</small></div><span class="st todo">Pendente</span></li>
+    <li><div>Autorização de voo de drone para imagens aéreas<small>Prevista para daqui a duas semanas · Cristian</small></div><span class="st fut">Em 2 semanas</span></li>
   </ul>
-  <h2>Perguntas que ainda serão feitas</h2>
-  <ul>
-    <li>O que seria um projeto bem-sucedido para a Schio daqui a 6 meses?</li>
-    <li>Onde a Schio quer estar em 5 anos? Há novos terrenos ou produtos em vista?</li>
-    <li>Como Santa Maria vê a Schio hoje? Alguma percepção incomoda? Pelo que querem ser lembrados?</li>
-    <li>Existe algum prazo crítico, limitação ou preocupação com o projeto?</li>
-    <li>Quem será o rosto da marca na comunicação?</li>
-  </ul>
+  <h2>Conversa complementar com o Douglas</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Tema</th><th>Resposta</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Critério de sucesso em 6 meses</td><td>Vender pelo menos 2 unidades por mês. Como o 1º mês é de estruturação, a meta se dilui a partir do 2º: 10 unidades vendidas em 5 meses é o critério de sucesso para um projeto que estava parado</td></tr>
+      <tr><td class="k">Visão de 5 anos</td><td>Expandir a marca Schio como incorporadora na região central e no interior, da fronteira às cidades que consomem Santa Maria. A base é o Recanto Maestro, com projetos inovadores na região, até o mercado de Santa Maria estar pronto para um novo empreendimento</td></tr>
+      <tr><td class="k">Como Santa Maria vê a Schio</td><td>Santa Maria não conhece a Schio. Não há percepção positiva nem negativa: a empresa é vista como uma pequena incorporadora de acesso a poucos. A resposta são ações com imobiliárias e investidores</td></tr>
+      <tr><td class="k">Porta-voz da marca</td><td>Douglas Gripa Schio</td></tr>
+      <tr><td class="k">Nome oficial e tempo de mercado</td><td>Construtora Schio, com mais de 30 anos no mercado</td></tr>
+      <tr><td class="k">Site atual</td><td>Não será alterado agora. É o site de uma construtora, não de uma incorporadora. O Maestro terá uma landing page própria</td></tr>
+      <tr><td class="k">Base de clientes</td><td>A Schio não tem lista de clientes nem de parceiros. O público do Maestro será construído do zero</td></tr>
+    </tbody>
+  </table></div>
 </article>
 
 <!-- ===================== BRIEFING -->
 <article class="page" data-id="briefing" data-ch="Briefing" data-t="Briefing estratégico">
   <header class="ph"><p class="chap">Briefing</p><h1>Briefing estratégico</h1><div class="rule"></div></header>
   <p class="lead">A Schio é uma construtora de execução comprovada que, até aqui, não precisou vender. O Residencial Maestro é o primeiro passo para deixar de depender de um único cliente e conquistar o mercado de Santa Maria.</p>
-  <p>Em 32 anos, a Schio construiu cerca de 300 mil m², quase 500 apartamentos em 20 blocos e um parque termal em 4 meses. Boa parte dessa história foi feita para o Recanto Maestro, que garantiu demanda por mais de uma década. Por isso, a empresa sabe construir muito bem, mas ainda não tem marca, processo comercial e leitura de mercado próprios em Santa Maria.</p>
+  <p>Em mais de 30 anos, a Schio construiu cerca de 300 mil m², quase 500 apartamentos em 20 blocos e um parque termal em 4 meses. Boa parte dessa história foi feita para o Recanto Maestro, que garantiu demanda por mais de uma década. Por isso, a empresa sabe construir muito bem, mas ainda não tem marca, processo comercial e leitura de mercado próprios em Santa Maria.</p>
   <p>O Maestro é um prédio boutique: 21 apartamentos em 7 pavimentos, com lazer no topo, numa rua tranquila e com pouca conveniência por perto. O produto é bom, mas precisa de posicionamento para vender. O trabalho tem duas camadas: transformar execução em marca para a Schio e dar ao Maestro argumentos que valorizem o que ele tem de melhor.</p>
+  <h2>Objetivos do projeto</h2>
+  <div class="facts">
+    <div><b>10</b><span>unidades vendidas entre o 2º e o 6º mês</span></div>
+    <div><b>2/mês</b><span>ritmo médio de vendas a partir do 2º mês</span></div>
+    <div><b>6 meses</b><span>de ciclo comercial; o 1º mês é de estruturação</span></div>
+    <div><b>5 anos</b><span>para consolidar a Schio como incorporadora regional</span></div>
+  </div>
+  <p><strong>Visão de 5 anos:</strong> expandir a marca Schio como incorporadora na região central e no interior do estado, da fronteira às cidades que consomem Santa Maria, com base no Recanto Maestro e em projetos inovadores na região, até que o mercado de Santa Maria esteja pronto para receber um novo empreendimento.</p>
   <div class="note"><p><strong>Leitura central.</strong> A Schio não precisa provar que constrói. Precisa mostrar a Santa Maria que é uma incorporadora da cidade, e não só do Recanto.</p></div>
-  <div class="note"><p><strong>Momento da obra.</strong> A obra está licenciada desde 26/05/2025, com incorporação registrada em 30/10/2025, e está finalizando as últimas lajes. A previsão de entrega é dezembro de 2027. Como o canteiro está à frente da venda, a estratégia é vender obra visível e documentação em dia, e não apenas planta.</p></div>
+  <div class="note"><p><strong>Momento da obra.</strong> A obra está licenciada desde 26/05/2025, com incorporação registrada em 30/10/2025, e está finalizando as últimas lajes. A previsão de entrega é de 18 a 24 meses a partir de outubro de 2026, ou seja, entre abril e outubro de 2028. Como o canteiro está à frente da venda, a estratégia é vender obra visível e documentação em dia, e não apenas planta.</p></div>
   <h2>Fontes deste briefing</h2>
   <ul>
     <li>Reunião de kickoff e resumo elaborado pela equipe GO.</li>
@@ -573,11 +632,11 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
   <p class="lead">A Schio tem uma grande capacidade de construção e uma estrutura comercial ainda em formação. O Maestro é a oportunidade de equilibrar as duas.</p>
   <ol class="road">
     <li><div class="dot">1</div><div><h3>Dependência de um cliente</h3><p>O Recanto sustentou a empresa por uma década. A própria Schio quer criar uma esteira de projetos e não depender de um único cliente. O Maestro é o primeiro dessa esteira, e o resultado dele vai pesar nas próximas decisões.</p></div></li>
-    <li><div class="dot">2</div><div><h3>Marca pouco lembrada como incorporadora</h3><p>Quem conhece a Schio conhece pelo Recanto ou pelo canteiro. Em Santa Maria, a hipótese é que a marca ainda não seja lembrada como incorporadora. A pesquisa de mercado vai confirmar.</p></div></li>
+    <li><div class="dot">2</div><div><h3>Marca desconhecida em Santa Maria</h3><p>Santa Maria ainda não conhece a Schio. Entre pessoas, imobiliárias e corretores, a marca não tem percepção positiva nem negativa: é vista como uma pequena incorporadora de acesso a poucos. O trabalho começa por apresentar a Schio ao mercado, com ações junto a imobiliárias e investidores.</p></div></li>
     <li><div class="dot">3</div><div><h3>Estrutura comercial a construir</h3><p>Corretores, treinamento, meta, plantão e jornada de visita não estavam definidos. Agora, a gestão comercial passa a ser da GO, com atendimento pela Santa Imóveis.</p></div></li>
     <li><div class="dot">4</div><div><h3>Bom produto, endereço que pede argumento</h3><p>Planta, lazer no topo e orientação solar estão bem resolvidos. A comunicação vai valorizar a vida dentro do prédio, a tranquilidade da rua, o sol e os acessos.</p></div></li>
     <li><div class="dot">5</div><div><h3>Cultura de execução, ainda sem narrativa</h3><p>A empresa cresceu "naturalmente", como contaram no kickoff. A história é forte, mas ainda não foi organizada como marca. Esse é o papel da imersão.</p></div></li>
-    <li><div class="dot">6</div><div><h3>Objetivos e expectativas a alinhar</h3><p>Os blocos de objetivos, percepção de marca e expectativas do kickoff ainda estão em aberto. Eles definem o critério de sucesso do projeto.</p></div></li>
+    <li><div class="dot">6</div><div><h3>Objetivos definidos</h3><p>A meta é vender 10 unidades entre o 2º e o 6º mês, uma média de 2 por mês, num projeto que estava parado. A visão de 5 anos é consolidar a Schio como incorporadora na região central, no interior e na fronteira.</p></div></li>
     <li><div class="dot">7</div><div><h3>Comunicação genérica</h3><p>Site e Instagram falam com quem quer contratar uma obra, com textos que serviriam para qualquer construtora, e o Instagram está sem publicações desde 27/11/2025. As provas reais da Schio ainda não aparecem.</p></div></li>
     <li><div class="dot">8</div><div><h3>Obra à frente da venda</h3><p>O canteiro avançou mais rápido que a comercialização. Isso pede velocidade, mas também é a melhor prova: o prédio já está saindo do chão.</p></div></li>
   </ol>
@@ -588,7 +647,7 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
   <p class="lead">A força está na execução e no produto. O desafio está na marca e na comercialização.</p>
   <div class="swot">
     <div class="sw s1"><h3>Forças</h3><ul>
-      <li>32 anos de Schio e mais de 40 de obra; ~300 mil m² e ~500 apartamentos entregues</li>
+      <li>Mais de 30 anos de Schio e mais de 40 de obra; ~300 mil m² e ~500 apartamentos entregues</li>
       <li>Provas de entrega raras: Parque Termal em 4 meses, 6 torres em 3 anos</li>
       <li>Empresa familiar com capital, canteiro e equipe próprios</li>
       <li>Incorporação registrada, matrícula sem ônus e obra em andamento</li>
@@ -600,9 +659,10 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
       <li>Histórico concentrado em um cliente</li>
       <li>Rua com pouca conveniência e lote estreito</li>
       <li>55 m² sem sacada nem suíte; um elevador para 21 unidades</li>
-      <li>Nome e tempo de mercado comunicados de formas diferentes</li></ul></div>
+      <li>Marca desconhecida em Santa Maria, vista como pequena incorporadora de acesso a poucos</li></ul></div>
     <div class="sw s3"><h3>Oportunidades</h3><ul>
-      <li>32 anos em 12 de dezembro como marco da nova fase</li>
+      <li>Aniversário da Schio em 12 de dezembro como marco da nova fase</li>
+      <li>Expansão regional: região central, interior e fronteira, cidades que consomem Santa Maria</li>
       <li>Escassez real: 16 unidades disponíveis</li>
       <li>Credibilidade de entrega num mercado em que atraso é comum</li>
       <li>Vista como argumento: as vendas se concentraram nos andares altos</li>
@@ -625,10 +685,11 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
       <ol>
         <li><strong>Transformar execução em confiança.</strong> O comprador quer saber se vai receber as chaves. Território: a construtora que entrega, com provas reais.</li>
         <li><strong>Contar a origem:</strong> do agro de Dona Francisca ao canteiro e à incorporação.</li>
-        <li><strong>Usar os 32 anos em 12 de dezembro</strong> para apresentar a nova fase em Santa Maria.</li>
-        <li><strong>Definir o porta-voz da marca</strong> na comunicação.</li>
+        <li><strong>Usar o aniversário da Schio, em 12 de dezembro,</strong> para apresentar a nova fase em Santa Maria.</li>
+        <li><strong>Douglas como porta-voz da marca</strong> na comunicação.</li>
+        <li><strong>Tornar a Schio conhecida</strong> com ações junto a imobiliárias e investidores.</li>
         <li><strong>Posicionar o Recanto como prova de capacidade,</strong> mostrando a Schio também como empresa de Santa Maria.</li>
-        <li><strong>Padronizar nome e tempo de mercado</strong> em todos os materiais.</li>
+        <li><strong>"Construtora Schio" e "mais de 30 anos"</strong> como padrão em todos os materiais.</li>
       </ol>
     </div>
     <div>
@@ -652,7 +713,7 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
   <p class="lead">Uma construtora familiar que cresceu pelo canteiro, com uma capacidade de entrega que poucas empresas da região conseguem demonstrar.</p>
   <div class="facts">
     <div><b>40+ anos</b><span>de obra na família</span></div>
-    <div><b>32 anos</b><span>de Schio em 12 de dezembro</span></div>
+    <div><b>30+ anos</b><span>de Schio, com aniversário em 12 de dezembro</span></div>
     <div><b>~300 mil m²</b><span>construídos</span></div>
     <div><b>~500</b><span>apartamentos em 20 blocos desde 2012</span></div>
   </div>
@@ -738,8 +799,10 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
       <tr><td class="k">Logo</td><td>Arquivo vetorial recebido. Manual de identidade da Idez Design, com versões principal, monocromáticas e em preto e branco, e limite de redução de 2 cm</td></tr>
       <tr><td class="k">Cores</td><td>Laranja Pantone 151C e grafite Pantone 431C</td></tr>
       <tr><td class="k">Tipografia</td><td>Não definida no manual</td></tr>
-      <tr><td class="k">Nome em uso</td><td>Construções Schio Ltda. (razão social), Schio Construções (nome fantasia), Schio Construtora e Incorporadora (logo) e Schio Construtora (site). Vamos padronizar</td></tr>
-      <tr><td class="k">Tempo de mercado</td><td>O site e a tabela comunicam "30 anos"; o kickoff, 32 anos em 12 de dezembro. Vamos padronizar</td></tr>
+      <tr><td class="k">Nome oficial</td><td>Construtora Schio. A razão social segue Construções Schio Ltda.</td></tr>
+      <tr><td class="k">Tempo de mercado</td><td>Mais de 30 anos, padrão para todos os materiais</td></tr>
+      <tr><td class="k">Porta-voz</td><td>Douglas Gripa Schio</td></tr>
+      <tr><td class="k">Site</td><td>Não será alterado agora: é o site de uma construtora, não de uma incorporadora. O Residencial Maestro terá uma landing page própria</td></tr>
       <tr><td class="k">Sede</td><td>ERS 149, Km 124, Recanto Maestro, Restinga Sêca. Sede fiscal em Dona Francisca</td></tr>
     </tbody>
   </table></div>
@@ -750,7 +813,7 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
     <li><strong>Transformar execução em confiança:</strong> mostrar ao comprador que a Schio entrega, com números e histórias reais.</li>
     <li><strong>Contar a origem:</strong> do agro de Dona Francisca ao canteiro e à incorporação.</li>
     <li><strong>Falar com o comprador final,</strong> além de quem contrata obra.</li>
-    <li><strong>Usar os 32 anos em 12 de dezembro</strong> como marco da nova fase em Santa Maria.</li>
+    <li><strong>Usar o aniversário de 12 de dezembro</strong> como marco da nova fase em Santa Maria.</li>
   </ul>
 </article>
 
@@ -770,7 +833,7 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
       <tr><td class="k">Unidades</td><td>21 apartamentos e 34 boxes de garagem vinculados aos apartamentos</td></tr>
       <tr><td class="k">Elevador</td><td>1</td></tr>
       <tr><td class="k">Andamento</td><td>Finalizando as últimas lajes</td></tr>
-      <tr><td class="k">Previsão de entrega</td><td>Dezembro de 2027, a confirmar com a Schio</td></tr>
+      <tr><td class="k">Previsão de entrega</td><td>De 18 a 24 meses a partir de outubro de 2026: entre abril e outubro de 2028</td></tr>
       <tr><td class="k">Responsáveis técnicos</td><td>Arq. Renato Machado Flores (projeto) e Eng. Cristian Luís Londero (execução)</td></tr>
     </tbody>
   </table></div>
@@ -853,23 +916,19 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
       <tr><td class="k">Regime de incorporação</td><td>Construção pela própria incorporadora, sem prazo de carência</td></tr>
     </tbody>
   </table></div>
-  <h2>Pasta de documentação para clientes e parceiros</h2>
-  <p>Vamos montar no Drive do projeto uma pasta pronta para apresentar a clientes mais exigentes e a parceiros de venda.</p>
-  <ul class="req-list">
-    <li><div>Certidões negativas da Construções Schio Ltda.<small>Federal e Dívida Ativa da União, estadual, municipal, trabalhista (CNDT), FGTS (CRF), protestos e ações cíveis · Stefani</small></div><span class="st todo">Pendente</span></li>
-    <li><div>Certidões negativas dos sócios<small>Ações cíveis, protestos e débitos fiscais · Stefani</small></div><span class="st todo">Pendente</span></li>
-    <li><div>Contrato social e alterações<small>Stefani</small></div><span class="st todo">Pendente</span></li>
-    <li><div>Aprovações complementares<small>Certidão de aprovação do projeto nº 79/2025, aprovação do PPCI pelos bombeiros e ARTs/RRTs · Stefani e Cristian</small></div><span class="st wip">Parcial</span></li>
-    <li><div>Patrimônio de afetação: será instituído?<small>Stefani</small></div><span class="st todo">A levantar</span></li>
-    <li><div>Modelos de contrato usados hoje (compra e venda, reserva, distrato)<small>Para conferência de como os contratos estão sendo executados · Stefani</small></div><span class="st todo">Pendente</span></li>
-    <li><div>Minuta da convenção de condomínio e estimativa da taxa de condomínio<small>Stefani</small></div><span class="st todo">Pendente</span></li>
-  </ul>
+  <h2>Checklist de documentos</h2>
+  <p>Conferido com o Drive do projeto em 14/10/2026. Os itens "Solicitado" já foram pedidos ao Douglas e estamos aguardando. Os itens "Arquivar" já estão com a GO e só precisam ser colocados na pasta certa.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Documento</th><th>No Drive</th><th>Responsável</th><th>Status</th></tr></thead>
+    <tbody><tr><td colspan="4" style="background:var(--champ);font-weight:700;color:var(--gold-d);font-size:13px">Empresa e sócios</td></tr><tr><td class="k">Certidões negativas da Construções Schio Ltda.<small style="display:block;font-weight:500;color:var(--muted)">Federal e Dívida Ativa da União, estadual, municipal, CNDT, FGTS, protestos e ações cíveis</small></td><td>Não está no Drive</td><td>Stefani</td><td><span class="st req">Solicitado</span></td></tr><tr><td class="k">Certidões negativas dos sócios<small style="display:block;font-weight:500;color:var(--muted)">Ações cíveis, protestos e débitos fiscais</small></td><td>Não está no Drive</td><td>Stefani</td><td><span class="st req">Solicitado</span></td></tr><tr><td class="k">Contrato social e alterações<small style="display:block;font-weight:500;color:var(--muted)">Com certidão simplificada da Junta Comercial</small></td><td>Não está no Drive</td><td>Stefani</td><td><span class="st req">Solicitado</span></td></tr><tr><td class="k">Cartão CNPJ<small style="display:block;font-weight:500;color:var(--muted)"></small></td><td>01 › 03 Documentos Gerais</td><td>—</td><td><span class="st ok">Recebido</span></td></tr><tr><td colspan="4" style="background:var(--champ);font-weight:700;color:var(--gold-d);font-size:13px">Terreno e incorporação</td></tr><tr><td class="k">Certidão atualizada da matrícula<small style="display:block;font-weight:500;color:var(--muted)">Inteiro teor, emitida há no máximo 30 dias</small></td><td>O Drive tem a certidão de 30/10/2025, que precisa ser renovada</td><td>Schio</td><td><span class="st req">Solicitado</span></td></tr><tr><td class="k">Registro da incorporação nos materiais<small style="display:block;font-weight:500;color:var(--muted)">R.1 da matrícula 189.070, Registro de Imóveis de Santa Maria, de 30/10/2025, citado em anúncios e propostas</small></td><td>Matrícula em 02 › 02 Docs do Projeto</td><td>GO e Schio</td><td><span class="st wip">A confirmar</span></td></tr><tr><td class="k">Patrimônio de afetação<small style="display:block;font-weight:500;color:var(--muted)">Se será instituído</small></td><td>—</td><td>Stefani</td><td><span class="st wip">A levantar</span></td></tr><tr><td class="k">Minuta da convenção de condomínio e estimativa da taxa<small style="display:block;font-weight:500;color:var(--muted)">Informar se já existe minuta ou se falta elaborar; o registro só ocorre após o habite-se</small></td><td>Não está no Drive</td><td>Schio</td><td><span class="st wip">A confirmar</span></td></tr><tr><td colspan="4" style="background:var(--champ);font-weight:700;color:var(--gold-d);font-size:13px">Obra e licenças</td></tr><tr><td class="k">Licença para Construção nº 00152/2025<small style="display:block;font-weight:500;color:var(--muted)">Válida até 26/05/2028</small></td><td>02 › 02 Docs do Projeto</td><td>—</td><td><span class="st ok">Recebido</span></td></tr><tr><td class="k">Memorial descritivo, plantas, cortes e quadros de áreas<small style="display:block;font-weight:500;color:var(--muted)"></small></td><td>02 › 02 Docs do Projeto e 02 › 04 Projeto</td><td>—</td><td><span class="st ok">Recebido</span></td></tr><tr><td class="k">Aprovações complementares<small style="display:block;font-weight:500;color:var(--muted)">Certidão de aprovação do projeto nº 79/2025, PPCI e ARTs/RRTs</small></td><td>Certidão de aprovação e ART estrutural recebidas em 15/10; faltam PPCI e demais ARTs/RRTs</td><td>Stefani e Cristian</td><td><span class="st wip">Parcial</span></td></tr><tr><td class="k">Cronograma e relatório de andamento da obra<small style="display:block;font-weight:500;color:var(--muted)">Base da data de entrega divulgada</small></td><td>Não está no Drive</td><td>Cristian</td><td><span class="st req">Solicitado</span></td></tr><tr><td class="k">Previsão de entrega<small style="display:block;font-weight:500;color:var(--muted)">De 18 a 24 meses a partir de outubro de 2026 (abril a outubro de 2028)</small></td><td>—</td><td>Douglas e Cristian</td><td><span class="st ok">Definido</span></td></tr><tr><td class="k">Memorial de acabamentos<small style="display:block;font-weight:500;color:var(--muted)">Marcas, modelos e detalhes</small></td><td>Não está no Drive</td><td>Cristian e Simara</td><td><span class="st wip">Em elaboração</span></td></tr><tr><td colspan="4" style="background:var(--champ);font-weight:700;color:var(--gold-d);font-size:13px">Contratos e vendas</td></tr><tr><td class="k">Contrato GO, Vagner Uberti e Schio<small style="display:block;font-weight:500;color:var(--muted)">Assinado em 28/09/2026</small></td><td>A pasta 01 › 01 Contratos e Termos está vazia</td><td>GO</td><td><span class="st req">Arquivar</span></td></tr><tr><td class="k">Modelos de contrato usados hoje<small style="display:block;font-weight:500;color:var(--muted)">Compra e venda, reserva e distrato</small></td><td>Não está no Drive</td><td>Stefani</td><td><span class="st req">Solicitado</span></td></tr><tr><td class="k">Contratos das 5 unidades vendidas<small style="display:block;font-weight:500;color:var(--muted)">Cópias, para conferência</small></td><td>Não está no Drive</td><td>Schio</td><td><span class="st req">Solicitado</span></td></tr><tr><td class="k">Tabela de valores provisória<small style="display:block;font-weight:500;color:var(--muted)">Recebida em 06/10/2026</small></td><td>Ainda não arquivada em 02 › 03 Materiais Comerciais</td><td>GO</td><td><span class="st req">Arquivar</span></td></tr><tr><td class="k">Tabela de preços definitiva<small style="display:block;font-weight:500;color:var(--muted)">Datada e assinada</small></td><td>—</td><td>GO e Schio</td><td><span class="st fut">Etapa futura</span></td></tr><tr><td class="k">Autorização para divulgar e vender<small style="display:block;font-weight:500;color:var(--muted)">O contrato garante exclusividade na gestão comercial e de marketing; confirmar se basta ou se é preciso uma autorização de venda específica</small></td><td>Contrato</td><td>Junior</td><td><span class="st wip">A confirmar</span></td></tr><tr><td colspan="4" style="background:var(--champ);font-weight:700;color:var(--gold-d);font-size:13px">Marca, imagem e dados</td></tr><tr><td class="k">Cessão de uso do projeto e dos renders<small style="display:block;font-weight:500;color:var(--muted)">Direitos autorais e de imagem</small></td><td>Não está no Drive</td><td>Arq. Renato Machado Flores</td><td><span class="st req">Solicitado</span></td></tr><tr><td class="k">Registro das marcas Schio e Maestro no INPI<small style="display:block;font-weight:500;color:var(--muted)">Nome oficial: Construtora Schio</small></td><td>Não está no Drive</td><td>Douglas</td><td><span class="st req">Solicitado</span></td></tr><tr><td class="k">Aprovação das peças e campanhas<small style="display:block;font-weight:500;color:var(--muted)">Pela Schio, no grupo de WhatsApp, em até 24 horas</small></td><td>—</td><td>Schio</td><td><span class="st ok">Definido</span></td></tr><tr><td class="k">Logo e manual de marca<small style="display:block;font-weight:500;color:var(--muted)">Recebidos</small></td><td>Ainda não arquivados em 04 › 01 Branding</td><td>GO</td><td><span class="st req">Arquivar</span></td></tr><tr><td class="k">Acesso às contas (Meta, Google, domínio)<small style="display:block;font-weight:500;color:var(--muted)">Por convite, em nome da Schio</small></td><td>—</td><td>Douglas</td><td><span class="st req">Solicitado</span></td></tr><tr><td class="k">Autorização para voo de drone<small style="display:block;font-weight:500;color:var(--muted)"></small></td><td>—</td><td>Cristian</td><td><span class="st fut">Em 2 semanas</span></td></tr></tbody>
+  </table></div>
 </article>
 
 <!-- ===================== ESPELHO -->
 <article class="page" data-id="espelho" data-ch="Comercial" data-t="Espelho de vendas">
   <header class="ph"><p class="chap">Comercial</p><h1>Espelho de vendas</h1><div class="rule"></div></header>
-  <div class="prov"><b>Tabela provisória.</b> Os valores seguem a referência que a Schio vinha praticando e serão revisados após o estudo de concorrência, a análise de mercado e a definição do posicionamento. As condições de pagamento também serão formatadas nessa etapa.</div>
+  <div class="prov"><b>Duas tabelas.</b> A <b>tabela original</b> é o preço atual da Schio. A <b>tabela de gestão</b> soma 2% referentes à gestão comercial e é o preço mínimo com que o Maestro passa a ser trabalhado no mercado a partir de 15/10/2026. O espelho mostra a tabela de gestão; use o seletor para ver a original.</div>
+  <div class="filters tabsel" role="group" aria-label="Tabela de preços" style="margin:0 0 16px"><button type="button" data-t="g" aria-pressed="true">Tabela de gestão (+2%)</button><button type="button" data-t="o" aria-pressed="false">Tabela original Schio</button></div>
   <div class="esp-head">
     <div><div class="esp-stats"><div class="av"><b>16</b><span>disponíveis</span></div><div><b>5</b><span>vendidas</span></div><div><b>21</b><span>apartamentos</span></div></div><div class="meter" aria-hidden="true"><i></i></div></div>
     <div class="filters" role="group" aria-label="Filtrar por apartamento">
@@ -891,14 +950,14 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
   <div class="esp-leg"><span><i style="box-shadow:inset 4px 0 0 var(--gold)"></i>Disponível</span><span><i style="background:repeating-linear-gradient(135deg,var(--surface) 0 3px,var(--bg) 3px 6px);box-shadow:inset 4px 0 0 var(--muted)"></i>Vendido</span></div>
   <h2>Faixas de preço disponíveis</h2>
   <div class="scroll"><table>
-    <thead><tr><th>Apartamento</th><th>Disponíveis</th><th>De</th><th>Até</th><th>Por m² privativo</th></tr></thead>
+    <thead><tr><th>Apartamento</th><th>Disponíveis</th><th>Tabela original Schio</th><th>Tabela de gestão (+2%)</th><th>Por m² na tabela de gestão</th></tr></thead>
     <tbody>
-      <tr><td class="k">Final 1 · 104,83 m²</td><td>5 de 7</td><td class="num">R$ 640.000</td><td class="num">R$ 708.500</td><td class="num">R$ 6.105 a R$ 6.759</td></tr>
-      <tr><td class="k">Final 3 · 83,12 m²</td><td>6 de 7</td><td class="num">R$ 510.000</td><td class="num">R$ 563.500</td><td class="num">R$ 6.136 a R$ 6.779</td></tr>
-      <tr><td class="k">Final 2 · 55,25 m²</td><td>5 de 7</td><td class="num">R$ 335.000</td><td class="num">R$ 362.000</td><td class="num">R$ 6.063 a R$ 6.552</td></tr>
+      <tr><td class="k">Final 1 · 104,83 m²</td><td>5 de 7</td><td class="num">R$ 640.000 a R$ 708.500</td><td class="num"><b>R$ 652.800 a R$ 722.670</b></td><td class="num">R$ 6.227 a R$ 6.894</td></tr>
+      <tr><td class="k">Final 3 · 83,12 m²</td><td>6 de 7</td><td class="num">R$ 510.000 a R$ 563.500</td><td class="num"><b>R$ 520.200 a R$ 574.770</b></td><td class="num">R$ 6.258 a R$ 6.915</td></tr>
+      <tr><td class="k">Final 2 · 55,25 m²</td><td>5 de 7</td><td class="num">R$ 335.000 a R$ 362.000</td><td class="num"><b>R$ 341.700 a R$ 369.240</b></td><td class="num">R$ 6.185 a R$ 6.683</td></tr>
     </tbody>
   </table></div>
-  <p class="small">Unidades vendidas: 202, 601, 701, 702 e 703. Não há reservas. Estoque pela tabela provisória: R$ 8.269.500.</p>
+  <p class="small">Unidades vendidas: 202, 601, 701, 702 e 703. Não há reservas. Estoque pela tabela original: R$ 8.269.500. Estoque pela tabela de gestão: R$ 8.434.890.</p>
 </article>
 
 <!-- ===================== MODELO COMERCIAL -->
@@ -915,8 +974,8 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
       <tr><td class="k">Marketing digital</td><td>Campanhas e geração de leads, estruturadas após o posicionamento</td></tr>
       <tr><td class="k">Central de vendas</td><td>Nos escritórios das empresas que atendem o projeto. A sede da Schio fica no Recanto Maestro</td></tr>
       <tr><td class="k">Decorado</td><td>Não previsto neste momento. Pode ser avaliado com o avanço da obra</td></tr>
-      <tr><td class="k">Formas de pagamento</td><td>Financiamento bancário e parcelamento direto com a Schio, em condições acessíveis. A formatar na etapa de estratégia</td></tr>
-      <tr><td class="k">Horizonte</td><td>Ciclo de 6 meses para alcançar um volume relevante de vendas</td></tr>
+      <tr><td class="k">Formas de pagamento</td><td>Financiamento bancário e parcelamento direto com a Schio. Proposta da GO: 10% de entrada, 20% em 20 mensais, 10% em 2 reforços e 60% nas chaves, a validar com a Schio (ver Estudo de concorrência)</td></tr>
+      <tr><td class="k">Horizonte</td><td>Ciclo de 6 meses, com meta de 10 unidades vendidas entre o 2º e o 6º mês (média de 2 por mês)</td></tr>
     </tbody>
   </table></div>
   <h2>Canais e aprovações</h2>
@@ -927,28 +986,310 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
   </ul>
 </article>
 
-<!-- ===================== PÚBLICO -->
-<article class="page" data-id="publico" data-ch="Comercial" data-t="Público e compradores">
-  <header class="ph"><p class="chap">Comercial</p><h1>Público e compradores</h1><div class="rule"></div></header>
-  <p class="lead">Quem já comprou no Maestro é a melhor pista de quem vai comprar. Por isso, o primeiro passo é conhecer esses compradores.</p>
-  <h2>Perfis por planta (hipóteses)</h2>
+<!-- ===================== CONCORRÊNCIA -->
+<article class="page" data-id="concorrencia" data-ch="Comercial" data-t="Estudo de concorrência">
+  <header class="ph"><p class="chap">Comercial</p><h1>Estudo de concorrência</h1><div class="rule"></div></header>
+  <p class="lead">O Maestro custa menos por metro quadrado que os concorrentes diretos nas três plantas, é o único lançamento direto com box incluso e entrega antes dos principais rivais.</p>
+  <div class="facts">
+    <div><b>R$ 6.483</b><span>por m² em média na tabela de gestão, com box incluso</span></div>
+    <div><b>−4,6%</b><span>3D com suíte frente aos concorrentes diretos</span></div>
+    <div><b>−4,3%</b><span>2D com suíte frente aos concorrentes diretos</span></div>
+    <div><b>~2028</b><span>entrega, antes de Verse, Singular, Elo e Sync</span></div>
+  </div>
+  <p class="small">Levantamento de lançamentos, obras e prontos novos em Santa Maria em 14/10/2026, com preços dos concorrentes de aderência alta conferidos em 15/10/2026. R$/m² sobre área privativa. Os valores do Maestro usam a tabela de gestão (tabela original da Schio + 2%), preço mínimo de venda desde 15/10/2026. Fontes: tabela Schio de outubro de 2026 e anúncios públicos.</p>
+
+  <h2>Preço por m² por planta</h2>
   <div class="scroll"><table>
-    <thead><tr><th>Planta</th><th>Perfil provável</th><th>Mensagem</th></tr></thead>
+    <thead><tr><th>Planta</th><th>Maestro · original</th><th>Maestro · gestão</th><th>Concorrentes diretos</th><th>Todos os concorrentes</th><th>Gestão vs diretos</th></tr></thead>
     <tbody>
-      <tr><td class="k">104,83 m² · final 1</td><td>Família consolidada, upgrade de moradia</td><td>Espaço, status e vista</td></tr>
-      <tr><td class="k">83,12 m² · final 3</td><td>Casal, família pequena, investidor de padrão</td><td>Praticidade com padrão</td></tr>
-      <tr><td class="k">55,25 m² · final 2</td><td>Primeiro imóvel, investidor de renda, estudante</td><td>Entrada acessível e renda</td></tr>
+      <tr><td class="k">3D com suíte · 104,83 m²</td><td class="num">R$ 6.363</td><td class="num"><b>R$ 6.490</b></td><td class="num">R$ 6.804 (5)</td><td class="num">R$ 7.257 (8)</td><td><span class="st ok">−4,6%</span></td></tr>
+      <tr><td class="k">2D com suíte · 83,12 m²</td><td class="num">R$ 6.421</td><td class="num"><b>R$ 6.549</b></td><td class="num">R$ 6.845 (6)</td><td class="num">R$ 6.874 (15)</td><td><span class="st ok">−4,3%</span></td></tr>
+      <tr><td class="k">2D · 55,25 m²</td><td class="num">R$ 6.270</td><td class="num"><b>R$ 6.395</b></td><td class="num">R$ 7.329 (3)</td><td class="num">R$ 7.169 (8)</td><td><span class="st ok">−12,7%</span></td></tr>
     </tbody>
   </table></div>
-  <p class="small">As hipóteses serão validadas na pesquisa de mercado e com o perfil dos compradores atuais.</p>
-  <h2>O que a tabela já mostra</h2>
-  <p>Quatro das cinco vendas estão no 6º e no 7º pavimentos. A procura foi para os andares altos, o que reforça a vista como argumento. Das 16 unidades disponíveis, 11 estão entre o 2º e o 5º andar.</p>
-  <h2>O que pedimos à Schio</h2>
-  <ul class="req-list">
-    <li><div>Perfil dos compradores das 5 unidades vendidas<small>Como foi a venda, quem comprou (morador ou investidor) e por qual canal: indicação, rede da família, Recanto · Douglas</small></div><span class="st todo">Pendente</span></li>
-    <li><div>Lista de clientes da Schio, se entenderem pertinente<small>Sob confidencialidade e conforme a LGPD · Douglas</small></div><span class="st todo">Pendente</span></li>
+  <p class="small">Entre parênteses, o número de concorrentes considerados. Concorrentes diretos são os de aderência alta: mesma faixa de metragem e preço e localização próxima.</p>
+
+  <h2>3D com suíte: frente a frente</h2>
+  <p>Só o Tambara cobra menos por m², com a garagem cobrada à parte. O Verse, com mesmo produto e mesmo prazo, segue 15% acima do Maestro, mesmo na tabela de gestão.</p>
+  <div class="cbars">
+    <div class="cbar"><span class="cn">Res. José Adelar Tambara · 110 m²</span><span class="ct"><i style="width:80%;background:linear-gradient(90deg,#c9cfdc,#8d98b3)"></i></span><span class="cv">R$ 6.000/m² · −7,6%</span></div>
+    <div class="cbar ref"><span class="cn">Residencial Maestro · 104,83 m²</span><span class="ct"><i style="width:87%;background:linear-gradient(90deg,var(--gold-l),var(--gold-d))"></i></span><span class="cv">R$ 6.490/m² · tabela de gestão</span></div>
+    <div class="cbar"><span class="cn">R. Carlos Schirmer, 54 · 118 m² (pronto)</span><span class="ct"><i style="width:88%;background:linear-gradient(90deg,#c9cfdc,#8d98b3)"></i></span><span class="cv">R$ 6.610/m² · +1,8%</span></div>
+    <div class="cbar"><span class="cn">R. Lamartine Souza, 31 · 101,6 m² (pronto)</span><span class="ct"><i style="width:91%;background:linear-gradient(90deg,#c9cfdc,#8d98b3)"></i></span><span class="cv">R$ 6.782/m² · +4,5%</span></div>
+    <div class="cbar"><span class="cn">Próx. Clube Dores · 109 m² (pronto)</span><span class="ct"><i style="width:96%;background:linear-gradient(90deg,#c9cfdc,#8d98b3)"></i></span><span class="cv">R$ 7.156/m² · +10,3%</span></div>
+    <div class="cbar"><span class="cn">Verse (Xisto) · 104 m²</span><span class="ct"><i style="width:100%;background:linear-gradient(90deg,#c9cfdc,#8d98b3)"></i></span><span class="cv">R$ 7.471/m² · +15,1%</span></div>
+  </div>
+
+  <h2>2D com suíte: frente a frente</h2>
+  <p>O Maestro está abaixo dos concorrentes diretos e entrega 2 boxes. Elo e Leben Bau são mais baratos por m², mas com 1 vaga, box à parte e preço de custo, que acompanha o custo real da obra.</p>
+  <div class="cbars">
+    <div class="cbar"><span class="cn">Elo Residence · 74 m²</span><span class="ct"><i style="width:58%;background:linear-gradient(90deg,#c9cfdc,#8d98b3)"></i></span><span class="cv">R$ 5.171/m² · −21,0%</span></div>
+    <div class="cbar"><span class="cn">Leben Bau · 84 m²</span><span class="ct"><i style="width:64%;background:linear-gradient(90deg,#c9cfdc,#8d98b3)"></i></span><span class="cv">R$ 5.720/m² · −12,7%</span></div>
+    <div class="cbar ref"><span class="cn">Residencial Maestro · 83,12 m²</span><span class="ct"><i style="width:74%;background:linear-gradient(90deg,var(--gold-l),var(--gold-d))"></i></span><span class="cv">R$ 6.549/m² · tabela de gestão</span></div>
+    <div class="cbar"><span class="cn">Verse (Xisto) · 80 m²</span><span class="ct"><i style="width:77%;background:linear-gradient(90deg,#c9cfdc,#8d98b3)"></i></span><span class="cv">R$ 6.834/m² · +4,4%</span></div>
+    <div class="cbar"><span class="cn">R. Pe. José de Anchieta, 502 · 80 m² (pronto)</span><span class="ct"><i style="width:79%;background:linear-gradient(90deg,#c9cfdc,#8d98b3)"></i></span><span class="cv">R$ 6.997/m² · +6,8%</span></div>
+    <div class="cbar"><span class="cn">Reserva Assunção · 83 m², 2 suítes</span><span class="ct"><i style="width:84%;background:linear-gradient(90deg,#c9cfdc,#8d98b3)"></i></span><span class="cv">R$ 7.440/m² · +13,6%</span></div>
+    <div class="cbar"><span class="cn">R. Euclides da Cunha, 1850 · 75 m² (a confirmar)</span><span class="ct"><i style="width:100%;background:linear-gradient(90deg,#c9cfdc,#8d98b3)"></i></span><span class="cv">R$ 8.907/m² · +36,0%</span></div>
+  </div>
+  <p class="small">O anúncio da R. Euclides da Cunha, 1850 subiu de R$ 480 mil para R$ 668 mil: valor fora da curva, a confirmar com o anunciante.</p>
+
+  <h2>2D: frente a frente</h2>
+  <p>É a planta mais exposta: na faixa de R$ 330 mil a R$ 380 mil o comprador encontra 2D com suíte, como o Orvieto. Os argumentos do Maestro são o box incluso, a localização e a entrega antes.</p>
+  <div class="cbars">
+    <div class="cbar"><span class="cn">Orvieto · 62 m², com suíte</span><span class="ct"><i style="width:63%;background:linear-gradient(90deg,#c9cfdc,#8d98b3)"></i></span><span class="cv">R$ 5.797/m² · −9,4%</span></div>
+    <div class="cbar ref"><span class="cn">Residencial Maestro · 55,25 m²</span><span class="ct"><i style="width:69%;background:linear-gradient(90deg,var(--gold-l),var(--gold-d))"></i></span><span class="cv">R$ 6.395/m² · tabela de gestão</span></div>
+    <div class="cbar"><span class="cn">Sync Floriano · 58 m²</span><span class="ct"><i style="width:75%;background:linear-gradient(90deg,#c9cfdc,#8d98b3)"></i></span><span class="cv">R$ 6.945/m² · +8,6%</span></div>
+    <div class="cbar"><span class="cn">Atmo Concept Home · 58 m²</span><span class="ct"><i style="width:100%;background:linear-gradient(90deg,#c9cfdc,#8d98b3)"></i></span><span class="cv">R$ 9.245/m² · +44,6%</span></div>
+  </div>
+
+  <h2>Box e condição dos concorrentes diretos</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Concorrente</th><th>Preço em 15/10</th><th>Box</th><th>Condição divulgada</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Verse · 3D 104 m² / 2D 80 m²</td><td class="num">R$ 777 mil / R$ 547 mil</td><td>À parte</td><td>Não divulgada · entrega dez/2028</td></tr>
+      <tr><td class="k">R. Lamartine Souza, 31 · 3D</td><td class="num">R$ 689 mil</td><td>Incluso</td><td>Aceita imóvel de menor valor</td></tr>
+      <tr><td class="k">Próx. Clube Dores · 3D</td><td class="num">R$ 780 mil</td><td>Incluso</td><td>Permuta até 50%</td></tr>
+      <tr><td class="k">R. Carlos Schirmer, 54 · 3D</td><td class="num">R$ 780 mil</td><td>Incluso</td><td>Entrada e financiamento</td></tr>
+      <tr><td class="k">Res. José Adelar Tambara · 3D</td><td class="num">R$ 600 mil + R$ 60 mil garagem</td><td>À parte</td><td>Entrada e financiamento</td></tr>
+      <tr><td class="k">Reserva Assunção · 2D 2 suítes</td><td class="num">R$ 620 mil</td><td>À parte</td><td>Fluxo direto ou entrada e financiamento</td></tr>
+      <tr><td class="k">Elo Residence · 2D suíte</td><td class="num">R$ 383 mil</td><td>À parte</td><td>Preço de custo, até 42x</td></tr>
+      <tr><td class="k">Leben Bau · 2D suíte</td><td class="num">R$ 479 mil</td><td>À parte</td><td>Preço de custo, até 44x</td></tr>
+      <tr><td class="k">R. Pe. José de Anchieta, 502 · 2D</td><td class="num">R$ 560 mil</td><td>Incluso</td><td>Entrada e financiamento</td></tr>
+      <tr><td class="k">Orvieto · 2D suíte 62 m²</td><td class="num">R$ 360 mil</td><td>Incluso</td><td>Fluxo direto ou entrada e financiamento</td></tr>
+      <tr><td class="k">Atmo Concept Home · 2D 58 m²</td><td class="num">R$ 536 mil</td><td>À parte</td><td>Preço de custo, até 22x</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Leituras para o Maestro</h2>
+  <div class="two">
+    <div>
+      <h3>Preço: vantagem clara</h3><p>Mesmo com a tabela de gestão, segue abaixo do mercado em R$/m² nas três plantas e é o único lançamento direto com box incluso. No 3D ainda há folga nos andares altos.</p>
+      <h3>Prazo: prova de segurança</h3><p>Estrutura quase concluída e entrega em ~2028, antes ou junto de Verse (dez/2028), Singular (2029), Elo (~42 meses) e Sync (2030).</p>
+    </div>
+    <div>
+      <h3>Condição: onde os rivais atacam</h3><p>Parcelamento longo a preço de custo (Elo 42x, Leben Bau 44x, Atmo 22x), entrada baixa e permutas de até 50%.</p>
+      <h3>2D sem suíte: mais exposto</h3><p>Na mesma faixa de preço o mercado já oferece 2D com suíte. Reforçar localização, box incluso e prazo.</p>
+    </div>
+  </div>
+
+  <h2>Condição de pagamento proposta <span class="st wip">A validar com a Schio</span></h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Exemplo</th><th>Entrada · 10%</th><th>20 mensais · 20%</th><th>2 reforços · 10%</th><th>Chaves · 60%</th></tr></thead>
+    <tbody>
+      <tr><td class="k">2D · apto 302 · R$ 341.700</td><td class="num">R$ 34.170</td><td class="num">R$ 3.417</td><td class="num">R$ 17.085</td><td class="num">R$ 205.020</td></tr>
+      <tr><td class="k">2D suíte · apto 403 · R$ 535.500</td><td class="num">R$ 53.550</td><td class="num">R$ 5.355</td><td class="num">R$ 26.775</td><td class="num">R$ 321.300</td></tr>
+      <tr><td class="k">3D · apto 401 · R$ 673.200</td><td class="num">R$ 67.320</td><td class="num">R$ 6.732</td><td class="num">R$ 33.660</td><td class="num">R$ 403.920</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">Chaves por financiamento bancário ou direto com a construtora. Correção pelo INCC até as chaves, permuta de até 30% e 5% de desconto à vista. No 2D, entrada a partir de R$ 20 mil. Valores pela tabela de gestão, sem correção; 20 meses consideram entrega em ~2028.</p>
+
+  <h2>Tabela de gestão</h2>
+  <p>A partir de 15/10/2026, o preço mínimo de venda é a tabela original da Schio + 2%, referentes à gestão comercial, aplicados a todas as unidades. Mesmo assim, o Maestro segue abaixo dos concorrentes diretos nas três plantas. No 3D dos andares altos ainda há folga: o apto 801 sai a R$ 722.670 (R$ 6.894/m²), 8% abaixo do Verse.</p>
+
+  <h2>Argumentário comercial</h2>
+  <ol>
+    <li><strong>Mais metro pelo mesmo dinheiro:</strong> 3D de 105 m² a partir de R$ 652.800; o concorrente direto pede R$ 777 mil por 104 m².</li>
+    <li><strong>Box incluso:</strong> 2 boxes no 2D com suíte e no 3D, enquanto vários concorrentes cobram a vaga à parte.</li>
+    <li><strong>Obra avançada:</strong> estrutura quase concluída e entrega em ~2028.</li>
+    <li><strong>Preço de tabela:</strong> o cliente sabe quanto vai pagar. Em obras a preço de custo, o valor final acompanha o custo real.</li>
+    <li><strong>Construtora com mais de 30 anos:</strong> empresa familiar, com obras residenciais, comerciais e industriais entregues.</li>
+  </ol>
+  <div class="scroll"><table>
+    <thead><tr><th>Objeção</th><th>Resposta</th></tr></thead>
+    <tbody>
+      <tr><td class="k">"Achei mais barato em outra obra."</td><td>Compare o pacote: 1 vaga ou box à parte, preço de custo e prazo mais longo. No Maestro: preço de tabela, 2 boxes e entrega em ~2028.</td></tr>
+      <tr><td class="k">"Prefiro um apartamento pronto."</td><td>Os 3D prontos da região estão entre R$ 6.780 e R$ 7.156 por m² e pedem pagamento agora. No Maestro, cerca de R$ 6.490 por m², pagos em parcelas até a entrega.</td></tr>
+      <tr><td class="k">"Outro lançamento é mais novo."</td><td>A entrega é a mesma ou posterior, com área praticamente igual, box à parte e preço maior.</td></tr>
+      <tr><td class="k">"Por esse preço acho 2D com suíte."</td><td>Mostre o custo total: box incluso, entrada a partir de R$ 20 mil e obra quase pronta no bairro Dores.</td></tr>
+    </tbody>
+  </table></div>
+</article>
+
+
+<!-- ===================== AVALIAÇÃO -->
+<article class="page" data-id="avaliacao" data-ch="Comercial" data-t="Avaliação de mercado">
+  <header class="ph"><p class="chap">Comercial</p><h1>Avaliação de mercado</h1><div class="rule"></div></header>
+  <p class="lead">Uma leitura diferente do estudo de concorrência: o valor de mercado de um apartamento equivalente ao 2D com suíte do Maestro, comparado com imóveis prontos e em construção da região.</p>
+  <div class="note"><p><strong>Por que fica separada.</strong> O <a href="#concorrencia">Estudo de concorrência</a> compara o Maestro com lançamentos e prontos novos de produto parecido. Esta avaliação usa o Método Comparativo Direto (NBR 14.653-2) sobre 2.539 anúncios de imóveis prontos e em construção, novos e usados, com desconto da margem de negociação. Mostra quanto o mercado em geral paga, não quanto pedem os concorrentes diretos.</p></div>
+  <div class="facts">
+    <div><b>R$ 466.779</b><span>valor de mercado estimado</span></div>
+    <div><b>R$ 5.492</b><span>por m²</span></div>
+    <div><b>R$ 420 mil</b><span>valor mínimo, maior liquidez</span></div>
+    <div><b>R$ 513 mil</b><span>valor máximo, menor liquidez</span></div>
+  </div>
+  <p class="small">Relatório de avaliação EEMOVEL emitido em 16/10/2026 pela equipe GO. Imóvel avaliado: apartamento de 85 m², 2 dormitórios com 1 suíte, 2 banheiros e 1 garagem, Rua Alfredo Preigchadt, Nossa Senhora das Dores.</p>
+
+  <h2>Comparação com a tabela do Maestro</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Referência</th><th>Valor</th><th>R$/m²</th><th>vs valor de mercado</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Avaliação · valor de mercado</td><td class="num">R$ 466.779</td><td class="num">R$ 5.492</td><td>—</td></tr>
+      <tr><td class="k">Avaliação · valor máximo</td><td class="num">R$ 513.457</td><td class="num">R$ 6.041</td><td>+10%</td></tr>
+      <tr><td class="k">Maestro 2D suíte · menor valor (apto 203, gestão)</td><td class="num">R$ 520.200</td><td class="num">R$ 6.258</td><td>+11%</td></tr>
+      <tr><td class="k">Maestro 2D suíte · apto 503 (gestão)</td><td class="num">R$ 549.780</td><td class="num">R$ 6.614</td><td>+18%</td></tr>
+      <tr><td class="k">Maestro 2D suíte · maior valor (apto 803, gestão)</td><td class="num">R$ 574.770</td><td class="num">R$ 6.915</td><td>+23%</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Leituras</h2>
+  <ul>
+    <li><strong>O Maestro está acima da média geral do mercado</strong>, o que é esperado para um imóvel novo com lazer completo, 2 boxes e entrega em ~2028. A amostra inclui usados e imóveis de padrões diferentes.</li>
+    <li><strong>Frente aos concorrentes diretos, o Maestro segue abaixo</strong> (ver Estudo de concorrência). As duas leituras se complementam: o preço está no lugar certo para produto novo, mas precisa de argumentos que justifiquem a diferença em relação ao mercado em geral.</li>
+    <li><strong>Atenção ao financiamento:</strong> a avaliação do banco costuma seguir essa lógica de mercado. Se o laudo vier abaixo do preço de venda, o comprador precisa completar a entrada. Vale considerar isso nas condições de pagamento.</li>
+    <li><strong>O imóvel avaliado tem 1 garagem</strong>, enquanto o 2D com suíte do Maestro tem 2 boxes. O box extra agrega valor e reduz a diferença.</li>
   </ul>
-  <div class="note"><p><strong>Por que a lista de clientes ajuda.</strong> Os clientes da Schio já confiam na empresa. Com a lista, a GO consegue falar com eles pelo institucional, como investidores ou compradores para morar, e criar públicos semelhantes nos anúncios para alcançar pessoas com o mesmo perfil. Também podemos engajar esses contatos no Instagram, fortalecendo os canais da Schio. A lista é usada apenas neste projeto e tratada com confidencialidade, conforme a LGPD.</p></div>
+
+  <h2>Amostra apresentada no relatório</h2>
+  <p class="small">20 dos 2.539 anúncios considerados, de junho a outubro de 2026. Na amostra, o R$/m² varia de R$ 3.000 a R$ 10.163, com mediana de R$ 5.291.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Endereço</th><th>Valor</th><th>R$/m²</th><th>Área</th><th>Dorm.</th><th>Garagem</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Rua João Rolim, 239</td><td class="num">R$ 656.200</td><td class="num">R$ 9.114</td><td class="num">72 m²</td><td>2</td><td>2</td></tr>
+      <tr><td class="k">Rua Coronel Aníbal Garcia Barão, 109</td><td class="num">R$ 375.000</td><td class="num">R$ 3.571</td><td class="num">105 m²</td><td>2</td><td>1</td></tr>
+      <tr><td class="k">Rua Marechal Floriano Peixoto, 1512</td><td class="num">R$ 389.000</td><td class="num">R$ 5.187</td><td class="num">75 m²</td><td>2</td><td>1</td></tr>
+      <tr><td class="k">Rua General Neto, 515</td><td class="num">R$ 390.000</td><td class="num">R$ 5.132</td><td class="num">76 m²</td><td>2</td><td>1</td></tr>
+      <tr><td class="k">Avenida Presidente Vargas, 2091</td><td class="num">R$ 308.000</td><td class="num">R$ 3.080</td><td class="num">100 m²</td><td>2</td><td>1</td></tr>
+      <tr><td class="k">Rua Professor Braga, 45</td><td class="num">R$ 180.000</td><td class="num">R$ 3.000</td><td class="num">60 m²</td><td>1</td><td>—</td></tr>
+      <tr><td class="k">Rua Silva Jardim, 2112</td><td class="num">R$ 295.000</td><td class="num">R$ 4.097</td><td class="num">72 m²</td><td>2</td><td>1</td></tr>
+      <tr><td class="k">Rua Henrique Dias, 102</td><td class="num">R$ 370.000</td><td class="num">R$ 4.625</td><td class="num">80 m²</td><td>3</td><td>1</td></tr>
+      <tr><td class="k">Rua Becker Pinto, 114</td><td class="num">R$ 528.077</td><td class="num">R$ 6.440</td><td class="num">82 m²</td><td>2</td><td>1</td></tr>
+      <tr><td class="k">Rua Riachuelo, 341</td><td class="num">R$ 508.384</td><td class="num">R$ 7.476</td><td class="num">68 m²</td><td>2</td><td>—</td></tr>
+      <tr><td class="k">Rua Nelson Durand, 340</td><td class="num">R$ 609.801</td><td class="num">R$ 10.163</td><td class="num">60 m²</td><td>2</td><td>1</td></tr>
+      <tr><td class="k">Rua Paraíba, 306</td><td class="num">R$ 655.000</td><td class="num">R$ 8.188</td><td class="num">80 m²</td><td>2</td><td>1</td></tr>
+      <tr><td class="k">Rua Silva Jardim, 2149</td><td class="num">R$ 349.000</td><td class="num">R$ 5.369</td><td class="num">65 m²</td><td>2</td><td>1</td></tr>
+      <tr><td class="k">Rua André Marques, 727</td><td class="num">R$ 350.000</td><td class="num">R$ 4.217</td><td class="num">83 m²</td><td>2</td><td>1</td></tr>
+      <tr><td class="k">Rua Ângelo Uglione, 1519</td><td class="num">R$ 350.000</td><td class="num">R$ 3.271</td><td class="num">107 m²</td><td>2</td><td>1</td></tr>
+      <tr><td class="k">Rua Nelson Durand, 340</td><td class="num">R$ 599.395</td><td class="num">R$ 9.990</td><td class="num">60 m²</td><td>2</td><td>1</td></tr>
+      <tr><td class="k">Rua João Rolim, 239</td><td class="num">R$ 624.450</td><td class="num">R$ 8.673</td><td class="num">72 m²</td><td>2</td><td>1</td></tr>
+      <tr><td class="k">Rua Acadêmico Rigoberto Duarte, 67</td><td class="num">R$ 499.000</td><td class="num">R$ 6.316</td><td class="num">79 m²</td><td>2</td><td>1</td></tr>
+      <tr><td class="k">Rua Jerônimo Gomes, 128</td><td class="num">R$ 605.000</td><td class="num">R$ 6.436</td><td class="num">94 m²</td><td>2</td><td>1</td></tr>
+      <tr><td class="k">Rua Major Duarte, 669</td><td class="num">R$ 375.381</td><td class="num">R$ 5.214</td><td class="num">72 m²</td><td>2</td><td>1</td></tr>
+    </tbody>
+  </table></div>
+</article>
+
+<!-- ===================== PARCEIROS -->
+<article class="page" data-id="parceiros" data-ch="Comercial" data-t="Parceiros comerciais">
+  <header class="ph"><p class="chap">Comercial</p><h1>Parceiros comerciais</h1><div class="rule"></div></header>
+  <p class="lead">Imobiliárias e corretores são o primeiro público do Maestro. Antes de vender ao comprador final, o projeto precisa de profissionais que acreditem que conseguem vendê-lo.</p>
+  <div class="facts">
+    <div><b>169</b><span>imobiliárias ativas no CRECI em Santa Maria</span></div>
+    <div><b>1.712</b><span>corretores ativos no CRECI em Santa Maria</span></div>
+    <div><b>129</b><span>imobiliárias de Santa Maria com relacionamento com a GO</span></div>
+    <div><b>484</b><span>corretores cadastrados pela ficha da GO, 358 deles identificados no CRECI</span></div>
+  </div>
+  <p class="small">Fonte: consulta pública do CRECI-RS em 15/10/2026, cruzada com a base de contatos da GO. A lista completa, com contatos, fica na base interna da GO e não é reproduzida aqui.</p>
+  <h2>Rede de imobiliárias da GO em Santa Maria</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Imobiliárias na rede</th><th>Corretores</th><th>Grupo de relacionamento criado</th></tr></thead>
+    <tbody>
+      <tr><td class="num">129</td><td class="num">562</td><td class="num">62</td></tr>
+    </tbody>
+  </table></div>
+  <p>As imobiliárias com mais corretores na rede são Maiquel Oliveira, Cancian, Invista, Santa Imóveis, RE/MAX Noble, Oliveira, Vend, Eder Ribeiro, Toneto, Avantor, Machado e Bravier, todas com 16 ou mais. Nesta fase, o radar comercial do Maestro se concentra em Santa Maria.</p>
+  <h2>Busca de imobiliárias e corretores</h2>
+  <p class="small">Cadastro público do CRECI-RS de Santa Maria, cruzado com a rede da GO. Não inclui telefones nem e-mails.</p>
+  <div class="srch">
+    <div class="filters" role="group" aria-label="Lista"><button type="button" data-l="i" aria-pressed="true">Imobiliárias</button><button type="button" data-l="c" aria-pressed="false">Corretores</button></div>
+    <input type="search" id="sq" placeholder="Digite um nome, imobiliária ou número do CRECI" aria-label="Buscar">
+    <div class="srch-opts"><label><input type="checkbox" id="sAt" checked=""> Só ativos</label><label><input type="checkbox" id="sGo"> Só rede GO</label><span id="sCount"></span></div>
+    <div class="scroll"><table><thead id="sHead"></thead><tbody id="sBody"></tbody></table></div>
+    <button type="button" class="more" id="sMore">Mostrar mais</button>
+  </div>
+  
+  <h2>Parceiros do projeto</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Parceiro</th><th>Papel</th><th>Situação</th></tr></thead>
+    <tbody>
+      <tr><td class="k">GO Company</td><td>Gestão comercial e estratégica, campanhas e equipe de vendas</td><td><span class="st ok">Contratada</span></td></tr>
+      <tr><td class="k">Vagner Uberti Pinto</td><td>Contratado junto com a GO na gestão comercial; atendimento dos leads</td><td><span class="st ok">Contratado</span></td></tr>
+      <tr><td class="k">Imobiliárias e corretores de Santa Maria</td><td>Canais de venda parceiros</td><td><span class="st wip">Em cadastro e classificação</span></td></tr>
+    </tbody>
+  </table></div>
+  <h2>Os cinco grupos de corretores</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Grupo</th><th>Como trabalha</th><th>Plantas</th></tr></thead>
+    <tbody>
+      <tr><td class="k">1. Médio e alto padrão</td><td>Atende clientes com patrimônio, que comparam imóveis e trocam de moradia</td><td>83 e 104 m²</td></tr>
+      <tr><td class="k">2. Lançamentos</td><td>Vende na planta e negocia entrada, reforços e financiamento</td><td>Todas</td></tr>
+      <tr><td class="k">3. Bairro e revenda</td><td>Conhece proprietários de usados e famílias que querem mudar</td><td>83 e 104 m²</td></tr>
+      <tr><td class="k">4. Primeiro imóvel</td><td>Trabalha com financiamento e composição de renda</td><td>55 m²</td></tr>
+      <tr><td class="k">5. Relacionamento e investidores</td><td>Atende empresários, profissionais liberais e clientes de outras cidades</td><td>Todas</td></tr>
+    </tbody>
+  </table></div>
+  <h2>O que faz um parceiro priorizar o Maestro</h2>
+  <ul>
+    <li><strong>Vendabilidade:</strong> preço, localização e produto compatíveis com a carteira do corretor.</li>
+    <li><strong>Segurança:</strong> confiança na Schio para recomendar uma compra na planta, apoiada na documentação em dia e na obra visível.</li>
+    <li><strong>Remuneração:</strong> comissão clara, com prazo e pagamento previsíveis.</li>
+    <li><strong>Facilidade comercial:</strong> estoque, condições e atendimento sempre atualizados, na Central do Corretor.</li>
+    <li><strong>Potencial de resultado:</strong> uma oportunidade concreta, e não só mais um produto no cadastro.</li>
+  </ul>
+  <p>Uma imobiliária pode cadastrar o Maestro e nunca oferecê-lo. Por isso a prioridade não é a imobiliária com mais corretores, e sim a que concentra profissionais que já atendem compradores compatíveis.</p>
+  <h2>Etapas da parceria</h2>
+  <ol class="road">
+    <li><div class="dot now">1</div><div><h3>Cadastro e classificação <span class="st wip">Semana 2</span></h3><p>Universo do CRECI cruzado com a base da GO; cada imobiliária e corretor classificado nos cinco grupos e priorizado.</p></div></li>
+    <li><div class="dot">2</div><div><h3>Definição dos parceiros e da central de vendas <span class="st fut">Semana 3</span></h3><p>Escolha das imobiliárias e corretores prioritários e das regras de parceria.</p></div></li>
+    <li><div class="dot">3</div><div><h3>Apresentação e treinamento <span class="st fut">A programar</span></h3><p>Visitas, apresentação do produto e da Schio, e treinamento de vendas.</p></div></li>
+    <li><div class="dot">4</div><div><h3>Central do Corretor <span class="st fut">Semana 4</span></h3><p>Book, tabela, espelho, plantas e imagens sempre atualizados para os parceiros.</p></div></li>
+    <li><div class="dot">5</div><div><h3>Acompanhamento <span class="st fut">Comercial</span></h3><p>Leads, visitas e vendas acompanhados por parceiro, com ajustes a cada ciclo.</p></div></li>
+  </ol>
+</article>
+
+<!-- ===================== PÚBLICO MACRO -->
+<article class="page" data-id="publico" data-ch="Comercial" data-t="Público macro">
+  <header class="ph"><p class="chap">Comercial</p><h1>Público macro</h1><div class="rule"></div></header>
+  <p class="lead">O Maestro tem três plantas e, na prática, três mercados compradores. Cada um tem renda, motivação e momento de vida diferentes.</p>
+  <h2>Faixas por planta</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Planta</th><th>Valores (tabela de gestão)</th><th>Renda familiar de referência</th><th>Disponíveis</th></tr></thead>
+    <tbody>
+      <tr><td class="k">55,25 m² · 2 dorm. · 1 box</td><td class="num">R$ 341,7 mil a R$ 369,2 mil</td><td class="num">R$ 11,5 mil a R$ 12,5 mil</td><td>5</td></tr>
+      <tr><td class="k">83,12 m² · 2 dorm. (1 suíte) · 2 boxes</td><td class="num">R$ 520,2 mil a R$ 574,8 mil</td><td class="num">R$ 17,5 mil a R$ 19,5 mil</td><td>6</td></tr>
+      <tr><td class="k">104,83 m² · 3 dorm. (1 suíte) · 2 boxes</td><td class="num">R$ 652,8 mil a R$ 722,7 mil</td><td class="num">R$ 22 mil a R$ 24,5 mil</td><td>5</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">A renda de referência considera financiamento de 80% em 30 anos e parcela de até 30% da renda. Quem tem entrada maior, patrimônio ou imóvel para vender pode ter renda menor. Valores e condições serão revisados na precificação.</p>
+  <h2>Públicos por planta</h2>
+  <div class="two">
+    <div>
+      <h3>55 m²</h3>
+      <ul><li>Casais no primeiro imóvel, com duas rendas</li><li>Jovens profissionais estabilizados</li><li>Pais que compram para os filhos estudarem</li><li>Investidores patrimoniais, a validar com dados de aluguel</li></ul>
+      <h3>83 m²</h3>
+      <ul><li>Famílias em upgrade de moradia</li><li>Casais profissionais de dupla renda</li><li>Empresários e profissionais liberais</li><li>Casais maduros reduzindo espaço</li></ul>
+    </div>
+    <div>
+      <h3>104 m²</h3>
+      <ul><li>Famílias consolidadas, com imóvel próprio</li><li>Médicos e profissionais liberais de maior renda</li><li>Empresários e comerciantes estabelecidos</li><li>Famílias patrimonializadas do interior e da fronteira</li></ul>
+      <h3>Em todas as plantas</h3>
+      <ul><li>Sensibilidade ao andar versus preço: 11 das 16 unidades disponíveis estão entre o 2º e o 5º andar</li><li>Comunidade ligada ao Recanto Maestro, a validar</li></ul>
+    </div>
+  </div>
+  <h2>Prioridades iniciais</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Segmento comprador</th><th>Plantas</th><th>Prioridade</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Famílias em evolução de moradia</td><td>83 e 104 m²</td><td><span class="st ok">Muito alta</span></td></tr>
+      <tr><td class="k">Casais de dupla renda</td><td>55 e 83 m²</td><td><span class="st req">Alta</span></td></tr>
+      <tr><td class="k">Profissionais liberais e empresários</td><td>83 e 104 m²</td><td><span class="st req">Alta</span></td></tr>
+      <tr><td class="k">Famílias do interior</td><td>55 e 83 m²</td><td><span class="st wip">Média</span></td></tr>
+      <tr><td class="k">Casais maduros reduzindo espaço</td><td>83 e 104 m²</td><td><span class="st wip">Média</span></td></tr>
+      <tr><td class="k">Investidores de renda</td><td>55 m²</td><td><span class="st fut">A validar</span></td></tr>
+    </tbody>
+  </table></div>
+  <h2>Onde esses públicos estão</h2>
+  <ul>
+    <li><strong>Bairros:</strong> Nossa Senhora das Dores, Menino Jesus, Nossa Senhora de Lourdes e Centro, ampliando para Medianeira, Fátima e Camobi.</li>
+    <li><strong>Instituições e polos:</strong> UFSM e UFN; Hospital Universitário, Hospital de Caridade e Unimed; 3ª Divisão de Exército e Base Aérea; escritórios, clínicas e comércio.</li>
+    <li><strong>Região:</strong> cidades do interior e da fronteira que usam Santa Maria como referência de estudo, saúde e investimento.</li>
+  </ul>
+  <h2>O que ainda vai calibrar estes públicos</h2>
+  <ul class="req-list">
+    <li><div>Perfil dos compradores das 5 unidades vendidas<small>Pedido ao Douglas</small></div><span class="st req">Solicitado</span></li>
+    <li><div>Mapa da concorrência e faixa de preço de referência<small>Estudo de concorrência concluído em 15/10 · proposta de condição e reajuste a validar</small></div><span class="st ok">Concluído</span></li>
+    <li><div>12 personas, quatro por planta, com jornada do cliente<small>Dia 12</small></div><span class="st todo">Em construção</span></li>
+  </ul>
+  <div class="note"><p><strong>Público construído do zero.</strong> A Schio não tem base de clientes nem de parceiros. O público do Maestro será formado pelas campanhas, pelos canais parceiros e por ações com imobiliárias e investidores.</p></div>
 </article>
 
 <!-- ===================== VISUAL ATUAL -->
@@ -994,7 +1335,7 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
   <h2>Diretrizes</h2>
   <ul>
     <li><strong>Entorno real sempre.</strong> As imagens partem da fotomontagem no bairro e de fotos de drone, sem paisagens ou prédios inventados.</li>
-    <li><strong>Arquitetura e cores fiéis ao projeto,</strong> com o código exato do verde da fachada informado pelo arquiteto.</li>
+    <li><strong>Arquitetura e cores fiéis ao projeto aprovado.</strong></li>
     <li><strong>IA apenas para luz e acabamento,</strong> conferindo cada elemento contra o projeto aprovado.</li>
     <li><strong>Áreas comuns mobiliadas e decoradas como serão entregues.</strong> Marcas de equipamentos só se confirmadas.</li>
     <li><strong>Indicação "imagem ilustrativa"</strong> em todas as peças.</li>
@@ -1011,7 +1352,9 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
       <tr><td class="k">Living do 55 m²</td><td>Público investidor e primeiro imóvel</td><td><span class="st fut">Etapa de criação</span></td></tr>
       <tr><td class="k">Hall de entrada</td><td>Book e chegada</td><td><span class="st fut">Etapa de criação</span></td></tr>
       <tr><td class="k">Plantas humanizadas revisadas</td><td>Book, site e corretores</td><td><span class="st todo">Depende do DWG</span></td></tr>
-      <tr><td class="k">Fotos e vídeos atuais da obra, com drone</td><td>Prova de obra em andamento · Arthur Vargas</td><td><span class="st todo">Pendente</span></td></tr>
+      <tr><td class="k">Fotos e vídeos atuais da obra</td><td>Prova de obra em andamento</td><td><span class="st wip">Agendado para 16/10</span></td></tr>
+      <tr><td class="k">Vídeo institucional</td><td>Apresentação da Schio e do Maestro · equipe GO</td><td><span class="st fut">Etapa de criação</span></td></tr>
+      <tr><td class="k">Maquete digital do Residencial Maestro</td><td>Book, landing page e atendimento · equipe GO</td><td><span class="st fut">Etapa de criação</span></td></tr>
     </tbody>
   </table></div>
   <h2>Materiais previstos</h2>
@@ -1075,37 +1418,32 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
   <div class="note"><p><strong>Já recebido:</strong> contrato assinado, tabela de valores provisória, cartão CNPJ e dados de faturamento, contatos-chave, matrícula com incorporação registrada, Licença para Construção, memorial descritivo, plantas em PDF, cortes e elevação frontal, quadros de áreas, manual da marca, logo vetorial e prévia de renders e plantas humanizadas.</p></div>
   <h2>Comercial</h2>
   <ul class="req-list">
-    <li><div>Perfil dos compradores das 5 unidades vendidas<small>Douglas</small></div><span class="st todo">Pendente</span></li>
-    <li><div>Lista de clientes da Schio, se entenderem pertinente<small>Douglas</small></div><span class="st todo">Pendente</span></li>
-    <li><div>Confirmação da data de entrega<small>Previsão de dezembro de 2027 · Douglas e Cristian</small></div><span class="st wip">A confirmar</span></li>
+    <li><div>Perfil dos compradores das 5 unidades vendidas<small>Pergunta reenviada ao Douglas: existe algum perfil dos compradores (morador ou investidor, como chegaram)?</small></div><span class="st req">Solicitado</span></li>
+    <li><div>Previsão de entrega<small>De 18 a 24 meses a partir de outubro de 2026: entre abril e outubro de 2028</small></div><span class="st ok">Definido</span></li>
+    <li><div>Orçamento mensal de mídia para campanhas institucionais e de geração de oportunidades<small>Faixa de planejamento proposta pela GO: R$ 3 mil a R$ 5 mil por mês · confirmar com o Douglas</small></div><span class="st todo">Pendente</span></li>
+    <li><div>Condições praticadas nas 5 vendas já realizadas<small>Entrada, parcelas e reforços aceitos, como referência para a precificação · Douglas</small></div><span class="st todo">Pendente</span></li>
   </ul>
   <h2>Produto e obra</h2>
   <ul class="req-list">
-    <li><div>Memorial de acabamentos com marcas, modelos e detalhes<small>Em elaboração · Cristian e Simara</small></div><span class="st wip">Em elaboração</span></li>
-    <li><div>Plantas em DWG e elevações laterais e de fundos<small>Arq. Renato Machado Flores</small></div><span class="st todo">Pendente</span></li>
-    <li><div>Arquivos originais dos renders em alta resolução<small>Douglas</small></div><span class="st todo">Pendente</span></li>
-    <li><div>Código da cor verde da fachada<small>Arq. Renato Machado Flores</small></div><span class="st todo">Pendente</span></li>
-    <li><div>Fotos recentes da obra<small>Cristian</small></div><span class="st todo">Pendente</span></li>
-    <li><div>Autorização para voo de drone<small>Cristian</small></div><span class="st todo">Pendente</span></li>
+    <li><div>Memorial de acabamentos com marcas, modelos e detalhes<small>Conferir se já foi entregue; se não, segue em elaboração · Cristian e Simara</small></div><span class="st wip">A conferir</span></li>
+    <li><div>Plantas em DWG e elevações laterais e de fundos<small>Recebidos em 15/10 os DWG dos projetos arquitetônico, elétrico, hidráulico e sanitário · conferir se as elevações estão no arquivo arquitetônico</small></div><span class="st ok">Recebido</span></li>
+    <li><div>Arquivos originais dos renders em alta resolução<small>Recebidos em 15/10: fachada em alta resolução; salão, academia e apartamentos ainda em resolução baixa · completar com o arquiteto, contato pela Wellen</small></div><span class="st wip">Parcial</span></li>
+    <li><div>Fotos recentes da obra<small>Pré-agendado para sexta-feira, 16/10/2026, se o tempo permitir · aguardando a autorização de acesso à obra</small></div><span class="st wip">Agendado</span></li>
+    <li><div>Autorização para voo de drone<small>Prevista para daqui a duas semanas · Cristian</small></div><span class="st fut">Em 2 semanas</span></li>
   </ul>
   <h2>Jurídico e documentação</h2>
+  <p>A lista completa, conferida com o Drive, está na página <a href="#documentacao">Documentação e jurídico</a>. Os itens prioritários já foram solicitados e estamos aguardando:</p>
   <ul class="req-list">
-    <li><div>Certidões negativas da empresa e dos sócios<small>Stefani</small></div><span class="st todo">Pendente</span></li>
-    <li><div>Contrato social e alterações<small>Stefani</small></div><span class="st todo">Pendente</span></li>
-    <li><div>Aprovações complementares (projeto, PPCI, ARTs/RRTs)<small>Stefani e Cristian</small></div><span class="st wip">Parcial</span></li>
-    <li><div>Patrimônio de afetação<small>Stefani</small></div><span class="st todo">A levantar</span></li>
-    <li><div>Modelos de contrato usados hoje<small>Stefani</small></div><span class="st todo">Pendente</span></li>
-    <li><div>Minuta da convenção e estimativa de condomínio<small>Stefani</small></div><span class="st todo">Pendente</span></li>
+    <li><div>Certidões negativas da empresa e dos sócios<small>Stefani</small></div><span class="st req">Solicitado</span></li>
+    <li><div>Matrícula atualizada, emitida há no máximo 30 dias<small>Schio</small></div><span class="st req">Solicitado</span></li>
+    <li><div>Aprovações complementares: projeto nº 79/2025, PPCI e ARTs/RRTs<small>Recebidos em 15/10 a certidão de aprovação do projeto e a ART do projeto estrutural · faltam o PPCI e as demais ARTs/RRTs · Stefani e Cristian</small></div><span class="st wip">Parcial</span></li>
+    <li><div>Modelos de contrato usados hoje e contratos das 5 unidades vendidas<small>Stefani</small></div><span class="st req">Solicitado</span></li>
+    <li><div>Contrato social, certidão simplificada e cronograma da obra<small>Stefani e Cristian</small></div><span class="st req">Solicitado</span></li>
   </ul>
   <h2>Marca e comunicação</h2>
   <ul class="req-list">
-    <li><div>Conversa complementar: objetivos, expectativas e percepção de marca<small>Douglas</small></div><span class="st todo">Pendente</span></li>
-    <li><div>Nome oficial e tempo de mercado a comunicar<small>Douglas</small></div><span class="st todo">Pendente</span></li>
-    <li><div>Porta-voz da marca<small>Douglas</small></div><span class="st todo">Pendente</span></li>
-    <li><div>Alinhamento com a agência atual do site<small>Douglas</small></div><span class="st todo">Pendente</span></li>
-    <li><div>Acesso às contas (Meta Business, Google, domínio) por convite<small>Douglas</small></div><span class="st todo">Pendente</span></li>
-    <li><div>Portfólio de obras entregues, com fotos<small>Douglas</small></div><span class="st todo">Pendente</span></li>
-    <li><div>Vídeo institucional, tour 360° ou maquete, se existirem<small>Douglas</small></div><span class="st todo">Pendente</span></li>
+    <li><div>Acesso às contas (Meta Business, Google, domínio) por convite<small>Aguardando o Douglas</small></div><span class="st req">Solicitado</span></li>
+    <li><div>Portfólio de obras entregues, com fotos<small>Verificar com o Douglas se existe</small></div><span class="st wip">A verificar</span></li>
   </ul>
 </article>
 
@@ -1114,28 +1452,21 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
   <header class="ph"><p class="chap">Gestão</p><h1>Tarefas da GO</h1><div class="rule"></div></header>
   <p class="lead">Cada pessoa da equipe encontra aqui o que está sob sua responsabilidade. Escolha um nome para ver só as suas tarefas, ou compartilhe o link direto da sua lista.</p>
   <div class="wkcard">
-    <div class="wkcard-top"><div><span class="wk-lbl">Semana 1 · Start do Projeto</span><b id="wkPct">0%</b><span class="wk-sub">concluído</span></div>
+    <div class="wkcard-top"><div><span class="wk-lbl">Semana 2 · Diagnóstico</span><b id="wkPct">0%</b><span class="wk-sub">concluído</span></div>
       <div class="wk-counts"><span><i class="c-ok"></i><b id="nOk">0</b> concluídas</span><span><i class="c-wip"></i><b id="nWip">0</b> em andamento</span><span><i class="c-todo"></i><b id="nTodo">0</b> pendentes</span></div></div>
     <div class="wkbar"><i id="wkBar"></i></div>
-    <p class="small" style="margin:10px 0 0">Tarefas concluídas contam 100%, em andamento contam 50%.</p>
+    <p class="small" style="margin:10px 0 0" id="w1note"></p>
   </div>
   <div class="people" id="people" role="group" aria-label="Filtrar por pessoa"></div>
-  <h2 id="tkTitle">Semana 1 · tarefas por pessoa</h2>
+  <h2 id="tkTitle">Semana 2 · tarefas por pessoa</h2>
+  <p class="muted">O roteiro dia a dia está na página <a href="#semana2">Semana 2 · Diagnóstico</a>.</p>
+  <div class="pgrid" id="pgrid2"></div>
+  <h2>Seguem da Semana 1</h2>
+  <p class="muted">Itens ainda em aberto da Semana 1, que continuam com os mesmos responsáveis.</p>
   <div class="pgrid" id="pgrid"></div>
-  <h2>Semana 2 · Diagnóstico <span class="st fut">Programada</span></h2>
-  <p class="muted">A Semana 2 abre após o aceite da Semana 1. As tarefas abaixo são a programação proposta, a confirmar com a equipe.</p>
-  <div class="pgrid next" id="pgrid2"></div>
-  <h2>Próximas etapas do projeto</h2>
-  <ol>
-    <li><strong>Estudo de concorrência e análise de mercado</strong> em Santa Maria: preço por m², estoque, m² construídos e percepção de marca.</li>
-    <li><strong>Diferenciais do Maestro</strong> frente aos concorrentes.</li>
-    <li><strong>Precificação definitiva e condições de pagamento.</strong></li>
-    <li><strong>Mapeamento dos canais de parceria</strong> da GO para o projeto.</li>
-    <li><strong>Público-alvo</strong> a partir dos compradores atuais e da lista de clientes.</li>
-    <li><strong>Imersão:</strong> entrevistas com Pedro, Josemar e Douglas.</li>
-    <li><strong>Plano digital urgente:</strong> rastreamento no site e retomada do Instagram.</li>
-    <li><strong>Identidade do Residencial Maestro</strong> e plano de lançamento, avaliando os 32 anos em 12 de dezembro.</li>
-  </ol>
+  <h2>Programado para as próximas etapas <span class="st fut">Previsto</span></h2>
+  <p class="muted">Tarefas que já têm responsável, mas pertencem às Semanas 3 e 4 ou à fase de Produção.</p>
+  <div class="pgrid next" id="pgrid3"></div>
 </article>
 
 <!-- ===================== LINKS -->
@@ -1145,53 +1476,23 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
   <h2>Schio Construtora</h2>
   <div class="lkgrid"><a class="lk" href="https://www.schioconstrutora.com.br/" target="_blank" rel="noopener"><span class="lki"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"></path></svg></span><span class="lkt"><b>Site</b><small>schioconstrutora.com.br</small></span><span class="st ok">Ativo</span></a><a class="lk" href="https://www.instagram.com/schio.construtora/" target="_blank" rel="noopener"><span class="lki"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".6"></circle></svg></span><span class="lkt"><b>Instagram</b><small>@schio.construtora</small></span><span class="st ok">Ativo</span></a><a class="lk" href="https://wa.me/5555997354812" target="_blank" rel="noopener"><span class="lki"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.8A8 8 0 1 1 8 19z"></path><path d="M9 8.5c.3 2.5 2.2 4.8 5 5.5l1-1.2 1.8.8-.4 1.6c-3.9.4-8-3.5-7.8-7.7l1.6-.4.8 1.8z"></path></svg></span><span class="lkt"><b>WhatsApp</b><small>(55) 99735-4812</small></span><span class="st ok">Ativo</span></a><a class="lk" href="mailto:contato@schioconstrutora.com.br" target="_blank" rel="noopener"><span class="lki"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"></rect><path d="M3.5 6.5 12 13l8.5-6.5"></path></svg></span><span class="lkt"><b>E-mail</b><small>contato@schioconstrutora.com.br</small></span><span class="st ok">Ativo</span></a><a class="lk" href="https://www.youtube.com/channel/UCCXrcFdcvB00yUV8nLBOvRg" target="_blank" rel="noopener"><span class="lki"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="3.5"></rect><path d="M10 9.5v5l4.5-2.5z"></path></svg></span><span class="lkt"><b>YouTube</b><small>Canal Schio Construtora</small></span><span class="st ok">Ativo</span></a><div class="lk off" aria-disabled="true"><span class="lki"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z"></path><circle cx="12" cy="10" r="2.3"></circle></svg></span><span class="lkt"><b>Google Meu Negócio</b><small>Perfil da Schio no Google</small></span><span class="st wip">A confirmar</span></div><a class="lk" href="https://www.google.com/maps/search/?api=1&amp;query=ERS+149+Km+124+Recanto+Maestro+Restinga+Seca+RS" target="_blank" rel="noopener"><span class="lki"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6 9 4zM9 4v14M15 6v14"></path></svg></span><span class="lkt"><b>Sede da Schio</b><small>ERS 149, Km 124, Recanto Maestro, Restinga Sêca</small></span><span class="st ok">Ativo</span></a></div>
   <h2>Residencial Maestro</h2>
-  <div class="lkgrid"><a class="lk" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Alfredo+Preigchadt+132+Santa+Maria+RS" target="_blank" rel="noopener"><span class="lki"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6 9 4zM9 4v14M15 6v14"></path></svg></span><span class="lkt"><b>Localização do Maestro</b><small>Rua Alfredo Preigchadt, 132, Dores, Santa Maria</small></span><span class="st ok">Ativo</span></a><a class="lk" href="https://www.schioconstrutora.com.br/projetos-schio/residencial-maestro-3/" target="_blank" rel="noopener"><span class="lki"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"></path></svg></span><span class="lkt"><b>Página do Maestro no site da Schio</b><small>Versão atual, publicada pela Schio</small></span><span class="st ok">Ativo</span></a><div class="lk off" aria-disabled="true"><span class="lki"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"></rect><path d="M3 8.5h18M7 13h6M7 16h10"></path></svg></span><span class="lkt"><b>Landing page do Residencial Maestro</b><small>Página de captação das campanhas</small></span><span class="st fut">Em produção</span></div><div class="lk off" aria-disabled="true"><span class="lki"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3.2"></circle><path d="M3.5 19c.6-3 2.8-4.8 5.5-4.8s4.9 1.8 5.5 4.8M16 7h5M16 11h5M17 15h4"></path></svg></span><span class="lkt"><b>Central do Corretor</b><small>Book, tabela, espelho, plantas e imagens para parceiros</small></span><span class="st fut">Em produção</span></div><a class="lk int" href="#espelho"><span class="lki"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18M9 4v16M15 4v16"></path></svg></span><span class="lkt"><b>Espelho de vendas</b><small>Disponibilidade e tabela provisória</small></span><span class="st ok">Ativo</span></a><div class="lk off js-drive-card" aria-disabled="true"><span class="lki"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></span><span class="lkt"><b>Drive do projeto</b><small>Pasta compartilhada com todos os arquivos</small></span><span class="st wip">Em preparação</span></div></div>
+  <div class="lkgrid"><a class="lk" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Alfredo+Preigchadt+132+Santa+Maria+RS" target="_blank" rel="noopener"><span class="lki"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6 9 4zM9 4v14M15 6v14"></path></svg></span><span class="lkt"><b>Localização do Maestro</b><small>Rua Alfredo Preigchadt, 132, Dores, Santa Maria</small></span><span class="st ok">Ativo</span></a><a class="lk" href="https://www.schioconstrutora.com.br/projetos-schio/residencial-maestro-3/" target="_blank" rel="noopener"><span class="lki"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"></path></svg></span><span class="lkt"><b>Página do Maestro no site da Schio</b><small>Versão atual, publicada pela Schio</small></span><span class="st ok">Ativo</span></a><div class="lk off" aria-disabled="true"><span class="lki"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"></rect><path d="M3 8.5h18M7 13h6M7 16h10"></path></svg></span><span class="lkt"><b>Landing page do Residencial Maestro</b><small>Página de captação das campanhas</small></span><span class="st fut">Em produção</span></div><div class="lk off" aria-disabled="true"><span class="lki"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3.2"></circle><path d="M3.5 19c.6-3 2.8-4.8 5.5-4.8s4.9 1.8 5.5 4.8M16 7h5M16 11h5M17 15h4"></path></svg></span><span class="lkt"><b>Central do Corretor</b><small>Book, tabela, espelho, plantas e imagens para parceiros</small></span><span class="st fut">Em produção</span></div><a class="lk int" href="#espelho"><span class="lki"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18M9 4v16M15 4v16"></path></svg></span><span class="lkt"><b>Espelho de vendas</b><small>Disponibilidade e tabela provisória</small></span><span class="st ok">Ativo</span></a><a class="lk" href="https://drive.google.com/drive/folders/1FHq1HpG2O2q-Vnr4ixrQ8Un5eDaOwrMW" target="_blank" rel="noopener"><span class="lki"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></span><span class="lkt"><b>Drive do projeto</b><small>Pasta do projeto: administrativo, materiais, comercial, marketing, eventos, fotos e vídeos</small></span><span class="st ok">Ativo</span></a></div>
   <h2>GO Company e Master Plan</h2>
   <div class="lkgrid"><a class="lk" href="https://gocompany360.github.io/masterplanschiomaestro/" target="_blank" rel="noopener"><span class="lki"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11l3 3v13H5z"></path><path d="M8 10h8M8 13.5h8M8 17h5"></path></svg></span><span class="lkt"><b>Master Plan online</b><small>gocompany360.github.io/masterplanschiomaestro</small></span><span class="st ok">Ativo</span></a><a class="lk" href="https://gocompany360.com.br" target="_blank" rel="noopener"><span class="lki"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 8v8l9 5 9-5V8z"></path><path d="M3 8l9 5 9-5M12 13v8"></path></svg></span><span class="lkt"><b>GO Company 360°</b><small>gocompany360.com.br</small></span><span class="st ok">Ativo</span></a></div>
   <h2>Como o Drive do projeto está organizado</h2>
   <div class="scroll"><table>
     <thead><tr><th>Pasta</th><th>O que você encontra</th></tr></thead>
     <tbody>
-      <tr><td class="k">01 · Institucional Schio</td><td>Logo, manual de marca, apresentação institucional e portfólio de obras entregues</td></tr>
-      <tr><td class="k">02 · Empreendimento</td><td>Plantas, cortes, memorial descritivo, memorial de acabamentos e quadros de áreas</td></tr>
-      <tr><td class="k">03 · Documentação</td><td>Matrícula, licença, aprovações, certidões e demais documentos para clientes e parceiros</td></tr>
-      <tr><td class="k">04 · Comercial</td><td>Tabela de valores, espelho de vendas e materiais para corretores</td></tr>
-      <tr><td class="k">05 · Imagens e vídeos</td><td>Prévia recebida, fotos e vídeos da obra, imagens de drone e novos renders</td></tr>
-      <tr><td class="k">06 · Marketing</td><td>Peças aprovadas, book de vendas, campanhas e conteúdo para redes sociais</td></tr>
-      <tr><td class="k">07 · Atas e relatórios</td><td>Registros de reuniões, relatórios de andamento e aceites de cada fase</td></tr>
+      <tr><td class="k"><a href="https://drive.google.com/drive/folders/1eX57FgKyVGW3Tsljf5TKfj5EBX_tI0MR" target="_blank" rel="noopener">01 · Administrativo</a></td><td>Contrato, dados cadastrais, documentação jurídica e registros do projeto</td></tr>
+      <tr><td class="k"><a href="https://drive.google.com/drive/folders/1YaVe7cckLTZtznxv0FdbOjFo2XM4NA95" target="_blank" rel="noopener">02 · Materiais Recebidos</a></td><td>Tudo o que a Schio enviou: plantas, memorial, matrícula, licença, renders e tabela</td></tr>
+      <tr><td class="k"><a href="https://drive.google.com/drive/folders/1p33vYZfuxkJ9hBKqt7TgkWGqWCtWNKJU" target="_blank" rel="noopener">03 · Comercial</a></td><td>Tabela de valores, espelho de vendas e materiais para corretores e parceiros</td></tr>
+      <tr><td class="k"><a href="https://drive.google.com/drive/folders/1-1VbiHBDomjwT-1Mr0jaU6KjwlpuvQRJ" target="_blank" rel="noopener">04 · Marketing</a></td><td>Identidade do Maestro, peças aprovadas, book de vendas e campanhas</td></tr>
+      <tr><td class="k"><a href="https://drive.google.com/drive/folders/1VJI9mxvAFqwdIUYnqczHRu2Ff3vFiL3c" target="_blank" rel="noopener">05 · Eventos</a></td><td>Ações, apresentações e eventos do projeto</td></tr>
+      <tr><td class="k"><a href="https://drive.google.com/drive/folders/1ovNKl-W2evxjW5nthMLqnAavS5JaAEXL" target="_blank" rel="noopener">06 · Fotos e Vídeos</a></td><td>Fotos e vídeos da obra, imagens de drone e novos renders</td></tr>
     </tbody>
   </table></div>
 </article>
 
-<!-- ===================== HISTÓRICO -->
-<article class="page" data-id="historico" data-ch="Gestão" data-t="Histórico de atualizações">
-  <header class="ph"><p class="chap">Gestão</p><h1>Histórico de atualizações</h1><div class="rule"></div></header>
-  <p class="lead">Registro do que mudou neste Master Plan, do mais recente para o mais antigo.</p>
-  <div class="scroll"><table>
-    <thead><tr><th>Data</th><th>Atualização</th></tr></thead>
-    <tbody>
-      <tr><td class="num k">06/10/2026</td><td>Página Drive do projeto substituída por Links do projeto: site, Instagram, WhatsApp, e-mail, YouTube, Google Meu Negócio, localizações, landing page, Central do Corretor, Drive e Master Plan</td></tr>
-      <tr><td class="num k">06/10/2026</td><td>Nova página Contrato e escopo; contrato assinado registrado na Semana 1; Vagner Uberti Pinto como contratado junto com a GO; resumo da Semana 1 atualizado</td></tr>
-      <tr><td class="num k">06/10/2026</td><td>Correção do layout dos itens "Falta" na página da Semana 1</td></tr>
-      <tr><td class="num k">06/10/2026</td><td>Pessoas e parceiros: nome do contato da Santa Imóveis corrigido para Vagner Uberti</td></tr>
-      <tr><td class="num k">06/10/2026</td><td>A Schio: obras entregues revisadas (Residencial do Hermes Gazolla, Residencial Olivas suprimido por ser a Fábrica de Azeite, entregas em Santa Cruz do Sul)</td></tr>
-      <tr><td class="num k">06/10/2026</td><td>Start do Projeto: responsáveis atualizados (kickoff com todo o time, Drive com a Fernanda, presskit e onboarding e material do produto com Wellen e Gustavo, briefings com a Wellen)</td></tr>
-      <tr><td class="num k">06/10/2026</td><td>Start do Projeto: "Presskit e canal oficial" passa a "Presskit e onboarding", etapa concluída</td></tr>
-      <tr><td class="num k">06/10/2026</td><td>Visão geral: objetivo "Marca Schio" renomeado para "Posicionamento Schio"</td></tr>
-      <tr><td class="num k">06/10/2026</td><td>Tarefas do Marcio transferidas para o Cássio</td></tr>
-      <tr><td class="num k">06/10/2026</td><td>Tarefas da GO organizadas por pessoa, com percentual da Semana 1, link direto por pessoa e programação da Semana 2</td></tr>
-      <tr><td class="num k">06/10/2026</td><td>Página Drive do projeto e atalho no índice, com a organização das pastas</td></tr>
-      <tr><td class="num k">06/10/2026</td><td>Novo capítulo Briefing: briefing estratégico, diagnóstico, análise SWOT e pontos a trabalhar (substitui a página Leitura estratégica)</td></tr>
-      <tr><td class="num k">06/10/2026</td><td>Grafismos circulares removidos da capa, do índice e dos cabeçalhos</td></tr>
-      <tr><td class="num k">06/10/2026</td><td>Imagem removida da capa</td></tr>
-      <tr><td class="num k">06/10/2026</td><td>Novo visual: degradês, cabeçalhos com grafismos, cartões, animações e tipografia maior no índice</td></tr>
-      <tr><td class="num k">06/10/2026</td><td>Logo oficial da GO Company aplicada no índice, na capa e na barra do celular</td></tr>
-      <tr><td class="num k">06/10/2026</td><td>Atribuições de Arthur Vargas: sistemas, tabelas e unidades, fotos, vídeos e drone da obra</td></tr>
-      <tr><td class="num k">06/10/2026</td><td>Equipe GO Company incluída em Pessoas e parceiros, com responsáveis da Semana 1 e das tarefas</td></tr>
-      <tr><td class="num k">06/10/2026</td><td>Master Plan criado em páginas, com o conteúdo da Fase 1: kickoff, empresa, empreendimento, documentação, tabela provisória e espelho, modelo comercial, material visual, diagnóstico digital, pendências e próximos passos</td></tr>
-    </tbody>
-  </table></div>
-</article>
 
 </main>
 </div>
@@ -1212,7 +1513,7 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
 })();
 (function(){
   /* Link da pasta compartilhada no Google Drive: preencher entre as aspas */
-  var DRIVE_URL='';
+  var DRIVE_URL='https://drive.google.com/drive/folders/1FHq1HpG2O2q-Vnr4ixrQ8Un5eDaOwrMW';
   if(DRIVE_URL){document.querySelectorAll('.js-drive-card').forEach(function(d){var a=document.createElement('a');a.className=d.className.replace(' off','');a.href=DRIVE_URL;a.target='_blank';a.rel='noopener';a.innerHTML=d.innerHTML.replace(/<span class="st [^"]+">[^<]*<\/span>/,'<span class="st ok">Ativo</span>');d.replaceWith(a)})}
   var pages=[].slice.call(document.querySelectorAll('.page')),toc=document.getElementById('toc'),lastCh='';
   pages.forEach(function(p,i){
@@ -1238,70 +1539,103 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
   }
   
   /* ===== tarefas por pessoa ===== */
-  var TEAM=[['gustavo','Gustavo','CEO e sócio-fundador'],['angela','Angela','Diretora administrativo-financeira'],['wellen','Wellen','Diretora de marketing'],['ricardo','Ricardo','Performance e mídia paga'],['fernanda','Fernanda','Produtora audiovisual'],['andre','André','Social media'],['marcio','Marcio','Diretor comercial'],['cassio','Cássio','Gerente comercial'],['marcelo','Marcelo','Consultor imobiliário'],['amanda','Amanda','Consultora imobiliária'],['arthur','Arthur Vargas','Captação e produto'],['luana','Luana','Novos negócios'],['bianca','Bianca','Pré-vendas'],['junior','Junior','Assessor jurídico']];
+  var TEAM=[['gustavo','Gustavo','CEO e sócio-fundador'],['angela','Angela','Diretora administrativo-financeira'],['wellen','Wellen','Diretora de marketing'],['ricardo','Ricardo','Performance e mídia paga'],['fernanda','Fernanda','Produtora audiovisual'],['andre','André','Social media'],['marcio','Marcio','Diretor comercial'],['cassio','Cássio','Gerente comercial'],['arthur','Arthur Vargas','Captação e produto'],['luana','Luana','Novos negócios'],['junior','Junior','Assessor jurídico']];
   var W1=[
    ['Reunião de kickoff com a Schio',['gustavo','cassio'],'ok'],
-   ['Conversa complementar com o Douglas (objetivos, expectativas e marca)',['gustavo','cassio'],'todo'],
+   ['Conversa complementar com o Douglas (objetivos, expectativas e marca)',['gustavo','cassio'],'ok'],
    ['Contrato assinado por todas as partes, com cláusula de confidencialidade',['gustavo','angela'],'ok'],
    ['Onboarding no kickoff: responsáveis, funções e contatos',['wellen','gustavo'],'ok'],
    ['Publicar o Master Plan do projeto',['gustavo'],'ok'],
-   ['Aceite da Semana 1 pela Schio',['gustavo'],'todo'],
-   ['Estrutura do Drive interno do projeto',['fernanda'],'wip'],
-   ['Criar a pasta compartilhada com a Schio e enviar o link para o Master Plan',['fernanda'],'todo'],
+   ['Consolidar a Semana 1 e abrir a Semana 2',['gustavo'],'todo'],
+   ['Estrutura do Drive do projeto',['fernanda'],'ok'],
+   ['Compartilhar a pasta com a Schio e incluir o link no Master Plan',['fernanda'],'ok'],
    ['Presskit entregue na assinatura do contrato',['wellen','gustavo'],'ok'],
    ['Briefing estratégico (rascunho)',['wellen'],'ok'],
-   ['Completar o briefing com a conversa complementar',['wellen'],'todo'],
+   ['Completar o briefing com a conversa complementar',['wellen'],'ok'],
    ['Receber a tabela e montar o espelho de vendas',['arthur','cassio'],'ok'],
-   ['Cobrar as pendências da Schio: compradores, lista de clientes, data de entrega, DWG, originais e memorial de acabamentos',['cassio'],'wip'],
-   ['Cadastrar tabela e unidades no sistema',['arthur'],'todo'],
-   ['Fotos e vídeos atuais da obra, com drone',['arthur'],'todo'],
+   ['Reenviar ao Douglas: perfil dos compradores e conferência do memorial de acabamentos',['cassio'],'wip'],
+   ['Contato com o arquiteto: plantas em DWG, elevações e originais dos renders',['wellen'],'wip'],
+   ['Fotos e vídeos atuais da obra (pré-agendado para sexta, 16/10)',['wellen'],'todo'],
    ['Revisar a análise da matrícula e da licença',['junior'],'wip'],
-   ['Pasta de documentação jurídica para clientes e parceiros',['junior','angela'],'todo'],
-   ['Relatório de pendências jurídicas',['junior'],'todo']
+   ['Enviar ao Douglas o pedido único de documentos do checklist',['junior'],'todo'],
+   ['Arquivar no Drive o contrato, a tabela provisória, o logo e o manual de marca',['angela'],'todo']
   ];
   var W2=[
-   ['Entrevistas de imersão com Pedro, Josemar e Douglas',['gustavo']],
-   ['Organizar o Drive compartilhado por fase',['fernanda']],
-   ['Estudo de concorrência e posicionamento',['wellen','cassio']],
-   ['Briefing da identidade do Residencial Maestro',['wellen']],
-   ['Instalar Pixel da Meta, GA4 e Tag Manager no site',['ricardo']],
-   ['Roteiro de captação audiovisual: obra, equipe e depoimentos',['fernanda']],
-   ['Plano de retomada do Instagram: 3 posts por semana e Reels de obra',['andre']],
-   ['Estudo de preços e proposta de precificação',['cassio']],
-   ['Alinhamento operacional com a Santa Imóveis',['cassio']],
-   ['Estudo do produto e roteiro de atendimento',['marcelo','amanda']],
-   ['Drone da vista real a partir do 9º pavimento',['arthur']],
-   ['Mapeamento dos canais parceiros',['luana']],
-   ['Roteiro de qualificação de leads',['bianca']],
-   ['Revisão dos modelos de contrato da Schio',['junior']]
+   ['Dia 8 · Pesquisa de mercado e dados de Santa Maria: população, renda, plano diretor, bairro Nossa Senhora das Dores e lançamentos recentes',['luana'],'todo'],
+   ['Dia 9 · Público-alvo por planta (104, 83 e 55 m²), incluindo investidor, público universitário e o perfil dos compradores atuais',['wellen'],'todo'],
+   ['Dia 10 · Mapa da concorrência, com visitas aos plantões: lançamentos de 2 e 3 dormitórios, preço por m², estoque, condições, materiais de venda e m² construídos por construtora',['cassio'],'ok'],
+   ['Dia 10 · Cadastro qualificado de imobiliárias e corretores (cinco grupos), incluindo quem vende os concorrentes e quem pode ser canal parceiro na Semana 3',['luana'],'todo'],
+   ['Dia 11 · Tendências e leitura digital: produto, comportamento do público, audiência para os anúncios e redes dos concorrentes',['wellen'],'todo'],
+   ['Dia 12 · Ferramentas estratégicas: SWOT, PESTEL, 5 Forças, Matriz de Posicionamento, 12 personas (quatro por planta) e Jornada',['gustavo'],'todo'],
+   ['Dia 13 · Dossiê de B.I. e Estratégia, com ficha técnica, diferenciais e faixa de preço de referência',['cassio'],'wip'],
+   ['Dia 14 · Apresentação da estratégia ao Douglas e validação no grupo',['gustavo'],'todo'],
+   ['Entrevistas de imersão com Pedro, Josemar e Douglas',['gustavo'],'todo'],
+   ['Frente digital imediata: Pixel da Meta, GA4 e Tag Manager no site (assim que o acesso for liberado) e plano de retomada do Instagram',['wellen'],'todo'],
+   ['Acompanhar o retorno do pedido de documentos e revisar os modelos de contrato quando chegarem',['junior'],'todo']
+  ];
+  var W3=[
+   ['Drone da obra e da vista real do 9º pavimento',['wellen'],'Semana 3'],
+   ['Definição dos parceiros comerciais e da central de vendas',['cassio'],'Semana 3'],
+   ['Roteiro de qualificação de leads',['cassio'],'Semana 3'],
+   ['Precificação definitiva e condições de pagamento',['cassio'],'Semana 4'],
+   ['Cadastrar tabela e unidades no sistema, após a precificação',['cassio'],'Semana 4'],
+   ['Setup da Central do Corretor',['wellen'],'Semana 4'],
+   ['Vídeo institucional da Schio e do Maestro',['fernanda'],'Produção'],
+   ['Maquete digital do Residencial Maestro',['wellen'],'Produção'],
+   ['Landing page do Residencial Maestro',['ricardo'],'Produção']
   ];
   var SL={ok:['ok','Concluída'],wip:['wip','Em andamento'],todo:['todo','Pendente']};
   var nm={};TEAM.forEach(function(t){nm[t[0]]=t[1]});
   function ini(n){return n.split(' ').map(function(x){return x[0]}).slice(0,2).join('').toUpperCase()}
-  var ok=0,wip=0,todo=0;W1.forEach(function(t){if(t[2]==='ok')ok++;else if(t[2]==='wip')wip++;else todo++});
-  var pct=Math.round((ok+wip*.5)/W1.length*100);
-  document.getElementById('nOk').textContent=ok;document.getElementById('nWip').textContent=wip;document.getElementById('nTodo').textContent=todo;
+  function stats(L){var o=0,w=0,t=0;L.forEach(function(x){if(x[2]==='ok')o++;else if(x[2]==='wip')w++;else t++});return {ok:o,wip:w,todo:t,pct:Math.round((o+w*.5)/L.length*100)}}
+  var S2=stats(W2),S1=stats(W1);
+  var W1open=W1.filter(function(t){return t[2]!=='ok'});
+  document.getElementById('nOk').textContent=S2.ok;document.getElementById('nWip').textContent=S2.wip;document.getElementById('nTodo').textContent=S2.todo;
+  var w1n=document.getElementById('w1note');if(w1n)w1n.textContent='Semana 1 · Start do Projeto: '+S1.pct+'% concluído, com '+W1open.length+' itens que seguem em aberto.';
+  var pct=S2.pct;
   function setPct(){document.getElementById('wkPct').textContent=pct+'%';document.getElementById('wkBar').style.width=pct+'%'}
-  var peopleEl=document.getElementById('people'),g1=document.getElementById('pgrid'),g2=document.getElementById('pgrid2');
-  function card(p,list,w2){var mine=list.filter(function(t){return t[1].indexOf(p[0])>-1});
-    var open=mine.filter(function(t){return t[2]&&t[2]!=='ok'}).length;
+  var peopleEl=document.getElementById('people'),g1=document.getElementById('pgrid'),g2=document.getElementById('pgrid2'),g3=document.getElementById('pgrid3');
+  function card(p,list,mode){var mine=list.filter(function(t){return t[1].indexOf(p[0])>-1});
+    var open=mode==='fut'?0:mine.filter(function(t){return t[2]!=='ok'}).length;
     var c=document.createElement('div');c.className='pcard';c.dataset.p=p[0];
-    var hd='<div class="pcard-h"><span class="av">'+ini(p[1])+'</span><div><b>'+p[1]+'</b><small>'+p[2]+'</small></div>'+(w2?'':'<div class="pp"><b>'+open+'</b><br>em aberto</div>')+'</div>';
+    var hd='<div class="pcard-h"><span class="av">'+ini(p[1])+'</span><div><b>'+p[1]+'</b><small>'+p[2]+'</small></div>'+(mode==='fut'?'':'<div class="pp"><b>'+open+'</b><br>em aberto</div>')+'</div>';
     var body=mine.length?'<ul>'+mine.map(function(t){var co=t[1].filter(function(x){return x!==p[0]}).map(function(x){return nm[x]});
-      var st=w2?'<span class="st fut">Semana 2</span>':'<span class="st '+SL[t[2]][0]+'">'+SL[t[2]][1]+'</span>';
-      return '<li class="'+(t[2]==='ok'?'done':'')+'"><span class="t">'+t[0]+(co.length?'<small>Com '+co.join(' e ')+'</small>':'')+'</span>'+st+'</li>'}).join('')+'</ul>':'<div class="none">'+(w2?'Sem tarefas previstas.':'Sem tarefas nesta semana.')+'</div>';
+      var st=mode==='fut'?'<span class="st fut">'+t[2]+'</span>':'<span class="st '+SL[t[2]][0]+'">'+SL[t[2]][1]+'</span>';
+      return '<li class="'+(t[2]==='ok'?'done':'')+'"><span class="t">'+t[0]+(co.length?'<small>Com '+co.join(' e ')+'</small>':'')+'</span>'+st+'</li>'}).join('')+'</ul>':'<div class="none">Sem tarefas.</div>';
     c.innerHTML=hd+body;return {el:c,n:mine.length,open:open}}
-  var cards1=[],cards2=[];
-  TEAM.forEach(function(p){var a=card(p,W1,false),b=card(p,W2,true);cards1.push([p[0],a]);cards2.push([p[0],b]);
-    if(a.n)g1.appendChild(a.el);if(b.n)g2.appendChild(b.el)});
+  var cards1=[],cards2=[],cards3=[];
+  TEAM.forEach(function(p){var a=card(p,W1open,'w1'),b=card(p,W2,'w2'),d=card(p,W3,'fut');cards1.push([p[0],a]);cards2.push([p[0],b]);cards3.push([p[0],d]);
+    if(a.n)g1.appendChild(a.el);if(b.n)g2.appendChild(b.el);if(d.n)g3.appendChild(d.el)});
   var all=document.createElement('button');all.type='button';all.dataset.p='all';all.textContent='Toda a equipe';all.setAttribute('aria-pressed','true');peopleEl.appendChild(all);
-  TEAM.forEach(function(p){var o=cards1.filter(function(c){return c[0]===p[0]})[0][1].open,b=document.createElement('button');b.type='button';b.dataset.p=p[0];b.setAttribute('aria-pressed','false');
+  TEAM.forEach(function(p){var has=[cards1,cards2,cards3].some(function(L){return L.filter(function(c){return c[0]===p[0]})[0][1].n});if(!has)return;var o=cards2.filter(function(c){return c[0]===p[0]})[0][1].open+cards1.filter(function(c){return c[0]===p[0]})[0][1].open,b=document.createElement('button');b.type='button';b.dataset.p=p[0];b.setAttribute('aria-pressed','false');
     b.innerHTML='<span class="av">'+ini(p[1])+'</span>'+p[1]+(o?' <span class="cnt">'+o+'</span>':'');peopleEl.appendChild(b)});
   function filterP(pid){peopleEl.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.p===pid?'true':'false')});
-    [[cards1,g1],[cards2,g2]].forEach(function(z){z[1].innerHTML='';z[0].forEach(function(c){if((pid==='all'&&c[1].n)||c[0]===pid){c[1].el.style.animation='none';c[1].el.offsetHeight;c[1].el.style.animation='';z[1].appendChild(c[1].el)}})});
-    document.getElementById('tkTitle').textContent='Semana 1 · '+(pid==='all'?'tarefas por pessoa':'tarefas de '+nm[pid])}
+    [[cards2,g2],[cards1,g1],[cards3,g3]].forEach(function(z){z[1].innerHTML='';z[0].forEach(function(c){if((pid==='all'&&c[1].n)||(c[0]===pid&&c[1].n)){c[1].el.style.animation='none';c[1].el.offsetHeight;c[1].el.style.animation='';z[1].appendChild(c[1].el)}});
+      if(!z[1].children.length)z[1].innerHTML='<p class="small">Nada atribuído nesta etapa.</p>'});
+    document.getElementById('tkTitle').textContent='Semana 2 · '+(pid==='all'?'tarefas por pessoa':'tarefas de '+nm[pid])}
   peopleEl.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var pid=b.dataset.p;history.replaceState(null,'','#tarefas'+(pid==='all'?'':'/'+pid));filterP(pid)});
 
+
+  /* busca parceiros */
+  (function(){var el=document.getElementById('buscaData');if(!el)return;var D=JSON.parse(el.textContent),L='i',lim=50;
+    var q=document.getElementById('sq'),at=document.getElementById('sAt'),go=document.getElementById('sGo'),hd=document.getElementById('sHead'),bd=document.getElementById('sBody'),ct=document.getElementById('sCount'),mo=document.getElementById('sMore');
+    function nz(s){return String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()}
+    D.i.forEach(function(r){r.k=nz(r[0]+' '+r[1]+' '+r[2])});D.c.forEach(function(r){r.k=nz(r[0]+' '+r[3]+' '+r[1])});
+    function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+    function hl(s,t){s=esc(s);if(!t)return s;var n=nz(s),i=n.indexOf(t);return i<0?s:s.slice(0,i)+'<mark>'+s.slice(i,i+t.length)+'</mark>'+s.slice(i+t.length)}
+    function run(){var t=nz(q.value.trim()),src=D[L],out=src.filter(function(r){var a=L==='i'?r[3]:r[2],g=r[4];return (!at.checked||a)&&(!go.checked||g)&&(!t||r.k.indexOf(t)>-1)});
+      out.sort(function(a,b){return (b[4]-a[4])||String(a[0]).localeCompare(String(b[0]),'pt-BR')});
+      ct.textContent=out.length.toLocaleString('pt-BR')+' resultado'+(out.length===1?'':'s');
+      if(L==='i'){hd.innerHTML='<tr><th>Imobiliária</th><th>Razão social</th><th>CRECI</th><th>Situação</th><th>Rede GO</th></tr>';
+        bd.innerHTML=out.slice(0,lim).map(function(r){return '<tr><td class="k">'+hl(r[0],t)+'</td><td>'+hl(r[1],t)+'</td><td class="num">'+(r[2]?hl(r[2],t):'—')+'</td><td>'+(r[3]?'Ativa':'Inativa')+'</td><td>'+(r[4]?'<span class="go">Rede GO</span>':'')+'</td></tr>'}).join('')}
+      else{hd.innerHTML='<tr><th>Corretor</th><th>Imobiliária</th><th>CRECI</th><th>Situação</th><th>Rede GO</th></tr>';
+        bd.innerHTML=out.slice(0,lim).map(function(r){return '<tr><td class="k">'+hl(r[0],t)+'</td><td>'+(r[3]?hl(r[3],t):'<span class="small">não informada</span>')+'</td><td class="num">'+hl(r[1],t)+'</td><td>'+(r[2]?'Ativo':'Inativo')+'</td><td>'+(r[4]?'<span class="go">Rede GO</span>':'')+'</td></tr>'}).join('')}
+      if(!out.length)bd.innerHTML='<tr><td colspan="5">Nenhum resultado.</td></tr>';
+      mo.style.display=out.length>lim?'':'none'}
+    var tm;q.addEventListener('input',function(){clearTimeout(tm);lim=50;tm=setTimeout(run,120)});at.addEventListener('change',function(){lim=50;run()});go.addEventListener('change',function(){lim=50;run()});
+    mo.addEventListener('click',function(){lim+=100;run()});
+    document.querySelectorAll('.srch .filters button').forEach(function(b){b.addEventListener('click',function(){L=b.dataset.l;lim=50;document.querySelectorAll('.srch .filters button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});run()})});
+    run()})();
   pages.forEach(function(p,i){var ph=p.querySelector('.ph');if(ph&&i>0){var s=document.createElement('span');s.className='bignum';s.setAttribute('aria-hidden','true');s.textContent=(i<10?'0':'')+i;ph.appendChild(s)}});
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function count(p){if(reduce)return;p.querySelectorAll('.facts b,.bigscore b,.esp-stats b').forEach(function(el){
@@ -1319,18 +1653,19 @@ a.lk:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(
   // espelho
   var A={1:[104.83,157.99,'3 (1 suíte)'],2:[55.25,83.27,'2'],3:[83.12,125.27,'2 (1 suíte)']};
   var U={201:[640000,'12 e 13'],202:[0,'23'],203:[510000,'01 e 02'],301:[650000,'10 e 11'],302:[335000,'18'],303:[517500,'08 e 09'],401:[660000,'04 e 05'],402:[340000,'17'],403:[525000,'34'],501:[676500,'29 e 30'],502:[345000,'14'],503:[539000,'06 e 07'],601:[0,'15 e 16'],602:[350000,'24'],603:[547500,'31 e 32'],701:[0,'19 e 20'],702:[0,'03'],703:[0,'25 e 26'],801:[708500,'27 e 28'],802:[362000,'33'],803:[563500,'21 e 22']};
-  var brl=function(v){return 'R$ '+v.toLocaleString('pt-BR')};
+  var brl=function(v){return 'R$ '+v.toLocaleString('pt-BR')};var TM='g',GM=1.02;function pr(v){return TM==='g'?Math.round(v*GM):v}
   var g=document.getElementById('floors'),tiles=[];
   for(var f=8;f>=2;f--){var l=document.createElement('div');l.className='lvl';l.textContent=f+'º';g.appendChild(l);
-    [1,2,3].forEach(function(c){var n=f*100+c,u=U[n],sold=!u[0],b=document.createElement('button');b.type='button';b.className='tile'+(sold?' sold':'');b.dataset.n=n;b.dataset.c=c;b.dataset.s=sold?'so':'av';b.setAttribute('aria-pressed','false');b.setAttribute('aria-label','Apartamento '+n+(sold?', vendido':', disponível, '+brl(u[0])));
-      b.innerHTML='<div class="n">'+n+'</div><div class="p">'+(sold?'Vendido':brl(u[0]))+'</div><div class="s">'+(u[1].indexOf(' e ')>0?'Boxes ':'Box ')+u[1]+'</div>';b.addEventListener('click',function(){show(b)});g.appendChild(b);tiles.push(b)})}
+    [1,2,3].forEach(function(c){var n=f*100+c,u=U[n],sold=!u[0],b=document.createElement('button');b.type='button';b.className='tile'+(sold?' sold':'');b.dataset.n=n;b.dataset.c=c;b.dataset.s=sold?'so':'av';b.setAttribute('aria-pressed','false');b.setAttribute('aria-label','Apartamento '+n+(sold?', vendido':', disponível, '+brl(pr(u[0]))));
+      b.innerHTML='<div class="n">'+n+'</div><div class="p">'+(sold?'Vendido':brl(pr(u[0])))+'</div><div class="s">'+(u[1].indexOf(' e ')>0?'Boxes ':'Box ')+u[1]+'</div>';b.addEventListener('click',function(){show(b)});g.appendChild(b);tiles.push(b)})}
   function show(b){tiles.forEach(function(t){t.setAttribute('aria-pressed',t===b?'true':'false')});var n=+b.dataset.n,c=+b.dataset.c,u=U[n],a=A[c],sold=!u[0];
     document.getElementById('dN').textContent=n;document.getElementById('dSt').innerHTML=sold?'<span class="st fut">Vendido</span>':'<span class="st ok">Disponível</span>';
     var rows=[['Pavimento',Math.floor(n/100)+'º'],['Dormitórios',a[2]],['Área privativa',a[0].toLocaleString('pt-BR')+' m²'],['Área total',a[1].toLocaleString('pt-BR')+' m²'],[u[1].indexOf(' e ')>0?'Boxes':'Box',u[1]]];
-    if(!sold){rows.push(['Valor de tabela',brl(u[0])]);rows.push(['Por m² privativo',brl(Math.round(u[0]/a[0]))])}
+    if(!sold){rows.push(['Tabela de gestão',brl(Math.round(u[0]*GM))]);rows.push(['Tabela original',brl(u[0])]);rows.push(['Por m² (gestão)',brl(Math.round(u[0]*GM/a[0]))])}
     document.getElementById('dL').innerHTML=rows.map(function(r){return '<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>'}).join('');
-    document.getElementById('dH').textContent=sold?'Unidade já comercializada.':'Valor provisório, sujeito à revisão de preços.'}
-  var btns=document.querySelectorAll('.filters button');btns.forEach(function(bt){bt.addEventListener('click',function(){btns.forEach(function(x){x.setAttribute('aria-pressed',x===bt?'true':'false')});var v=bt.dataset.f;tiles.forEach(function(t){var on=v==='all'||(v==='av'?t.dataset.s==='av':t.dataset.c===v);t.classList.toggle('dim',!on)})})});
+    document.getElementById('dH').textContent=sold?'Unidade já comercializada.':'Tabela de gestão = tabela original + 2%. Preço mínimo de venda.'}
+  var cur=null;var ts=document.querySelectorAll('.tabsel button');ts.forEach(function(bt){bt.addEventListener('click',function(){TM=bt.dataset.t;ts.forEach(function(x){x.setAttribute('aria-pressed',x===bt?'true':'false')});tiles.forEach(function(t){var u=U[+t.dataset.n];if(u[0]){t.querySelector('.p').textContent=brl(pr(u[0]))}})})});
+  var btns=document.querySelectorAll('.filters:not(.tabsel) button');btns.forEach(function(bt){bt.addEventListener('click',function(){btns.forEach(function(x){x.setAttribute('aria-pressed',x===bt?'true':'false')});var v=bt.dataset.f;tiles.forEach(function(t){var on=v==='all'||(v==='av'?t.dataset.s==='av':t.dataset.c===v);t.classList.toggle('dim',!on)})})});
   var first=tiles.filter(function(t){return t.dataset.s==='av'})[0];if(first)show(first);
 })();
 </script></body></html>
